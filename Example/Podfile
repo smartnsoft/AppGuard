@@ -1,0 +1,17 @@
+use_frameworks!
+
+abstract_target 'AppGuardAbstract' do
+  platform :ios, '9.0'
+  
+  pod 'AppGuard', :path => '../'
+  
+  pod 'SwiftLint'
+  
+  target 'AppGuard_Example' do
+  end
+  
+  #target 'AppGuard_ExampleTests' do
+  #  pod 'SwiftDate', '~> 4.5.1'
+  #end
+  
+end

@@ -1,0 +1,21 @@
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+
+language: objective-c
+osx_image: xcode9
+xcode_project: Example/AppGuard.xcodeproj
+before_script:
+#If one of this failed we have error and all process is stopped
+- cd Example
+- pod install --repo-update --verbose
+
+script:
+# It's only one command who count for valid or not build session
+- fastlane scan -s AppGuard
+
+after_success:
+# I have put this in after_success coz it's failed.
+# It's failed coz Extra Module isn't include inside SubPodSpec
+- cd ..
+- pod lib lint --verbose

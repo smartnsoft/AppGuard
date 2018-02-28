@@ -1,0 +1,25 @@
+PODS:
+  - AppGuard (0.1.0):
+    - Extra/UIKit (~> 1.1)
+    - Jelly (~> 1.2)
+  - Extra/UIKit (1.1.1)
+  - Jelly (1.2.4)
+  - SwiftLint (0.25.0)
+
+DEPENDENCIES:
+  - AppGuard (from `../`)
+  - SwiftLint
+
+EXTERNAL SOURCES:
+  AppGuard:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AppGuard: ca6676505af52d681e1a333984f935d9ea5ec98d
+  Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
+  Jelly: 70e542dd201460211f0f20042bc2c2d31ae239a1
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+
+PODFILE CHECKSUM: 11a808852c64fe52cc7bf387d6a6e42df42ce657
+
+COCOAPODS: 1.4.0

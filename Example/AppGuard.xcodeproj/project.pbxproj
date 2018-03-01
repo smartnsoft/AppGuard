@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AC0F36C81B6C6E4973BC388 /* Pods_AppGuardAbstract_AppGuard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F0A0CBA07F00D174A73B7A /* Pods_AppGuardAbstract_AppGuard_Tests.framework */; };
+		449C24452047FCFE001176DD /* XCTAssert+Optionnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */; };
 		44ED0A642047057F007723C2 /* custom_keys_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A622047057B007723C2 /* custom_keys_configuration.json */; };
 		44ED0A6520470736007723C2 /* StubsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED0A57204701BF007723C2 /* StubsReader.swift */; };
 		44ED0A68204709B9007723C2 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A66204709B8007723C2 /* configuration.json */; };
@@ -37,6 +38,7 @@
 		26F0A0CBA07F00D174A73B7A /* Pods_AppGuardAbstract_AppGuard_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B520238E6C70632B54150C0 /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3244E92520DC7D996EA5E73E /* Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Tests/Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTAssert+Optionnal.swift"; sourceTree = "<group>"; };
 		44ED0A57204701BF007723C2 /* StubsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsReader.swift; sourceTree = "<group>"; };
 		44ED0A622047057B007723C2 /* custom_keys_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom_keys_configuration.json; sourceTree = "<group>"; };
 		44ED0A66204709B8007723C2 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				44ED0A57204701BF007723C2 /* StubsReader.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			files = (
 				44ED0A6520470736007723C2 /* StubsReader.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				449C24452047FCFE001176DD /* XCTAssert+Optionnal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

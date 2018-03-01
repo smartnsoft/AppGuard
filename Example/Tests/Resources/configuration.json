@@ -1,9 +1,9 @@
 {
-  "update_deeplink": "",
+  "update_deeplink": "http://www.google.fr",
   "update_dialogType": 2,
-  "update_content": "",
-  "update_actionButtonLabel": "",
-  "update_changelog_content": "",
-  "update_title": "",
-  "update_imageURL": ""
+  "update_content": "Default content text",
+  "update_actionButtonLabel": "Default action label",
+  "update_changelog_content": "Default changelog text",
+  "update_title": "Default title",
+  "update_imageURL": "Default image URL"
 }

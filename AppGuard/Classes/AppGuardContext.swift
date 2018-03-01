@@ -22,14 +22,53 @@
 
 import Foundation
 
-/// The context of the guard checking
-///
-/// - **mandatoryUpdate**: User have to update the app
-/// - **recommandedUpdate**: User should update the app
-/// - **lastUpdateChangelog**: User have updated the app, so we display the changelog
-public enum AppGuardContext: Int {
-  case none = 0
-  case mandatoryUpdate
-  case recommandedUpdate
-  case lastUpdateChangelog
+public enum AppGuardContextKeys: String {
+  case lastDisplayUpdate
+  case lastSeenInformativeUpdate
+  case lastUpdateLater
+  
+  static let allKeys: [AppGuardContextKeys] = [.lastDisplayUpdate, .lastSeenInformativeUpdate, .lastUpdateLater]
+  
+  var userDefaultsKey: String {
+    return "AppGuard.UserDefaults.context.\(self)"
+  }
+}
+
+final class AppGuardContext {
+  public internal(set) var lastDisplayUpdate: Date? {
+    get {
+      return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastDisplayUpdate.userDefaultsKey) as? Date
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastDisplayUpdate.userDefaultsKey)
+    }
+  }
+  
+  public internal(set) var lastSeenInformativeUpdate: Date? {
+    get {
+      return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastSeenInformativeUpdate.userDefaultsKey) as? Date
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastSeenInformativeUpdate.userDefaultsKey)
+    }
+  }
+  
+  public internal(set) var lastUpdateLater: Date? {
+    get {
+      return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastUpdateLater.userDefaultsKey) as? Date
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastUpdateLater.userDefaultsKey)
+    }
+  }
+  
+  public func reset() {
+    AppGuardContextKeys.allKeys.forEach { (key) in
+      UserDefaults.standard.set(nil, forKey: key.userDefaultsKey)
+    }
+  }
+  
 }

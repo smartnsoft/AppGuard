@@ -45,8 +45,8 @@ public final class AppGuardConfiguration {
     }
   }
   
-  public var dialogTypeValue: AppGuardContext {
-    return AppGuardContext(rawValue: self.dialogType) ?? .none
+  public var dialogTypeValue: AppGuardContextType {
+    return AppGuardContextType(rawValue: self.dialogType) ?? .none
   }
   
   public internal(set) var content: String? {
@@ -106,4 +106,5 @@ public final class AppGuardConfiguration {
       }
     }
   }
+  
 }

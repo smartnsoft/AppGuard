@@ -20,14 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
+import XCTest
 
-public class AppGuardChangelogViewController: UIViewController {
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+extension XCTestCase {
+  func XCTAssertEqualOptional<T: Any>(_ a: @autoclosure () -> T?, _ b: @autoclosure () -> T?, _ message: String? = nil, file: StaticString = #file, line: UInt = #line) where T: Equatable {
+    if let _a = a() {
+      if let _b = b() {
+        XCTAssertEqual(_a, _b, (message != nil ? message! : ""), file: file, line: line)
+      } else {
+        XCTFail((message != nil ? message! : "a != nil, b == nil"), file: file, line: line)
+      }
+    } else if let _ = b() {
+      XCTFail((message != nil ? message! : "a == nil, b != nil"), file: file, line: line)
+    }
   }
-  
 }

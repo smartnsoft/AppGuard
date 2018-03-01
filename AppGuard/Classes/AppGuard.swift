@@ -26,17 +26,17 @@ import Foundation
 /// UI display callbacks of the controllers
 public protocol AppGuardUIDelegate: class {
   
-  func guardControllerWillAppear(`for` context: AppGuardContext)
-  func guardControllerDidAppear(`for` context: AppGuardContext)
+  func guardControllerWillAppear(`for` context: AppGuardContextType)
+  func guardControllerDidAppear(`for` context: AppGuardContextType)
   
-  func guardControllerWillDisappear(`for` context: AppGuardContext)
-  func guardControllerDidDisappear(`for` context: AppGuardContext)
+  func guardControllerWillDisappear(`for` context: AppGuardContextType)
+  func guardControllerDidDisappear(`for` context: AppGuardContextType)
 }
 
 /// Configure your custom controllers to display instead of default ones
 public protocol AppGuardDataSource: class {
-  func customUpdateController() -> AppGuardUpdateViewController?
-  func customChangelogController() -> AppGuardChangelogViewController?
+  func customUpdateController() -> AppGuardUpdateViewController
+  func customChangelogController() -> AppGuardChangelogViewController
 }
 
 public final class AppGuard {
@@ -49,17 +49,31 @@ public final class AppGuard {
   public weak var uiDelegate: AppGuardUIDelegate?
   public weak var dataSource: AppGuardDataSource?
   
-  init() {
-    if UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsKey) == nil {
+  public func prepare() {
+    if (UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) as? String)?.isEmpty == true || UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) == nil {
       AppGuardConfigurationKeysBinder.configureDefaultKeysBinding()
     }
+    self.dataSource = self
   }
   
   public func updateConfig(from configurationData: [String: Any?]) {
     self.configuration.update(with: configurationData)
   }
   
-  public func checkUpdateStatus() {
-    
+  public func displayUpdateStatus() -> Bool {
+    guard self.configuration.dialogTypeValue != .none else {
+      return false
+    }
+    return true
+  }
+}
+
+extension AppGuard: AppGuardDataSource {
+  public func customUpdateController() -> AppGuardUpdateViewController {
+    return AppGuardUpdateViewController()
+  }
+  
+  public func customChangelogController() -> AppGuardChangelogViewController {
+    return AppGuardChangelogViewController()
   }
 }

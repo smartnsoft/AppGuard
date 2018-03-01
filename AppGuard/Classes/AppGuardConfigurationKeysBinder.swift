@@ -37,4 +37,10 @@ public final class AppGuardConfigurationKeysBinder {
       }
     }
   }
+  
+  public static func resetBinding() {
+    AppGuardConfigurationKeys.allKeys.forEach { (stringKey) in
+      UserDefaults.standard.set(nil, forKey: stringKey.userDefaultsCustomKey)
+    }
+  }
 }

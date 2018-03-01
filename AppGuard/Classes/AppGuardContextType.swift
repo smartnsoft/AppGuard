@@ -20,14 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-public class AppGuardChangelogViewController: UIViewController {
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
-  }
-  
+/// The context of the guard checking
+///
+/// - **mandatoryUpdate**: User have to update the app
+/// - **recommandedUpdate**: User should update the app
+/// - **lastUpdateChangelog**: User have updated the app, so we display the changelog
+public enum AppGuardContextType: Int {
+  case none = 0
+  case mandatoryUpdate
+  case recommandedUpdate
+  case lastUpdateChangelog
 }

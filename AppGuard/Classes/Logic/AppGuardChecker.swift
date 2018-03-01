@@ -20,14 +20,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-public class AppGuardChangelogViewController: UIViewController {
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
+public typealias DisplayScreenResult = (willDisplay: Bool, context: AppGuardContextType)
+
+final class AppGuardChecker {
+  static func needDisplayScreen() -> DisplayScreenResult {
     
-    // Do any additional setup after loading the view.
+    let configuration = AppGuard.default.configuration
+    let context = AppGuard.default.context
+    
+    guard configuration.dialogTypeValue != .none else {
+      return (false, .none)
+    }
+    
+    let needs = (context.lastDisplayUpdate == nil || Date().isAfter(context.lastDisplayUpdate,
+                                                                    pastDays: configuration.maxDaysBetweenDisplay))
+    
+    return (needs, configuration.dialogTypeValue)
   }
-  
+}
+
+// MARK: - TimeInterval
+extension TimeInterval {
+  static let dayInSeconds: TimeInterval = 24 * 60 * 60
+}
+
+extension Date {
+  func isAfter(_ date: Date?, pastDays: Int) -> Bool {
+    return self.timeIntervalSinceReferenceDate > ((date?.timeIntervalSinceReferenceDate ?? TimeInterval.greatestFiniteMagnitude)
+      + (Double(pastDays) * TimeInterval.dayInSeconds))
+  }
 }

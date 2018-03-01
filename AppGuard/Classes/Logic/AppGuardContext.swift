@@ -22,19 +22,25 @@
 
 import Foundation
 
+public protocol AppGuardable {
+  var coordinator: AppGuardCoordinator? { get set }
+}
+
 public enum AppGuardContextKeys: String {
   case lastDisplayUpdate
   case lastSeenInformativeUpdate
   case lastUpdateLater
   
-  static let allKeys: [AppGuardContextKeys] = [.lastDisplayUpdate, .lastSeenInformativeUpdate, .lastUpdateLater]
+  static let allKeys: [AppGuardContextKeys] = [.lastDisplayUpdate,
+                                               .lastSeenInformativeUpdate,
+                                               .lastUpdateLater]
   
   var userDefaultsKey: String {
     return "AppGuard.UserDefaults.context.\(self)"
   }
 }
 
-final class AppGuardContext {
+public final class AppGuardContext {
   public internal(set) var lastDisplayUpdate: Date? {
     get {
       return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastDisplayUpdate.userDefaultsKey) as? Date

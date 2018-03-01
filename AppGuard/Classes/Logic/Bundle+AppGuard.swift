@@ -20,14 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-public class AppGuardUpdateViewController: UIViewController {
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
+// MARK: - Bundle
+extension Bundle {
+  static func bundleForResource(name: String, ofType type: String) -> Bundle {
     
-    // Do any additional setup after loading the view.
+    if(Bundle.main.path(forResource: name, ofType: type) != nil) {
+      return Bundle.main
+    }
+    
+    return Bundle(for: AppGuard.self)
   }
-  
 }

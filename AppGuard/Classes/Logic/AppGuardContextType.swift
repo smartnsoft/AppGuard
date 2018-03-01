@@ -29,7 +29,7 @@ import Foundation
 /// - **lastUpdateChangelog**: User have updated the app, so we display the changelog
 public enum AppGuardContextType: Int {
   case none = 0
-  case mandatoryUpdate
-  case recommandedUpdate
-  case lastUpdateChangelog
+  case mandatoryUpdate = 1
+  case recommandedUpdate = 2
+  case lastUpdateChangelog = 3
 }

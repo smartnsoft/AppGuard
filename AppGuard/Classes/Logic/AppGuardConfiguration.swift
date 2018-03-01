@@ -69,6 +69,16 @@ public final class AppGuardConfiguration {
     }
   }
   
+  public internal(set) var laterButtonLabel: String? {
+    get {
+      return UserDefaults.standard.string(forKey: AppGuardConfigurationKeys.laterButtonLabel.userDefaultsKey)
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardConfigurationKeys.laterButtonLabel.userDefaultsKey)
+    }
+  }
+  
   public internal(set) var changelogContent: String? {
     get {
       return UserDefaults.standard.string(forKey: AppGuardConfigurationKeys.changelogContent.userDefaultsKey)
@@ -99,10 +109,26 @@ public final class AppGuardConfiguration {
     }
   }
   
+  public internal(set) var maxDaysBetweenDisplay: Int {
+    get {
+      return UserDefaults.standard.integer(forKey: AppGuardConfigurationKeys.maxDaysBetweenDisplay.userDefaultsKey)
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardConfigurationKeys.maxDaysBetweenDisplay.userDefaultsKey)
+    }
+  }
+  
   func update(with data: [String: Any?]) {
-    AppGuardConfigurationKeys.allKeys.forEach { (stringKey) in
+    AppGuardConfigurationKeys.allStringKeys.forEach { (stringKey) in
       if let parseKey = UserDefaults.standard.string(forKey: stringKey.userDefaultsCustomKey) {
-        UserDefaults.standard.set(data[parseKey] as Any, forKey: stringKey.userDefaultsKey)
+        UserDefaults.standard.set(data[parseKey] as? String, forKey: stringKey.userDefaultsKey)
+      }
+    }
+    
+    AppGuardConfigurationKeys.allIntKeys.forEach { (integerKey) in
+      if let parseKey = UserDefaults.standard.string(forKey: integerKey.userDefaultsCustomKey) {
+        UserDefaults.standard.set(data[parseKey] as? Int, forKey: integerKey.userDefaultsKey)
       }
     }
   }

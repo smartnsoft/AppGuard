@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 import Foundation
-
+import Jelly
 
 /// UI display callbacks of the controllers
 public protocol AppGuardUIDelegate: class {
@@ -31,12 +31,16 @@ public protocol AppGuardUIDelegate: class {
   
   func guardControllerWillDisappear(`for` context: AppGuardContextType)
   func guardControllerDidDisappear(`for` context: AppGuardContextType)
+  
+  func didChooseLater(`for` context: AppGuardContextType)
+  func didChooseAction(`for` context: AppGuardContextType)
 }
 
 /// Configure your custom controllers to display instead of default ones
 public protocol AppGuardDataSource: class {
-  func customUpdateController() -> AppGuardUpdateViewController
-  func customChangelogController() -> AppGuardChangelogViewController
+  func customUpdateController() -> AppGuardUpdateViewController & AppGuardable
+  func customChangelogController() -> AppGuardChangelogViewController & AppGuardable
+  func presenterController() -> UIViewController?
 }
 
 public final class AppGuard {
@@ -45,9 +49,14 @@ public final class AppGuard {
   public static let `default` = AppGuard()
   
   public var configuration = AppGuardConfiguration()
+  public var context = AppGuardContext()
+  public var graphicContext = AppGuardGraphicContext()
   
   public weak var uiDelegate: AppGuardUIDelegate?
   public weak var dataSource: AppGuardDataSource?
+  
+  /// We have to keep a strong value to keep the animator alive
+  fileprivate var jellyAnimator: JellyAnimator?
   
   public func prepare() {
     if (UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) as? String)?.isEmpty == true || UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) == nil {
@@ -60,20 +69,59 @@ public final class AppGuard {
     self.configuration.update(with: configurationData)
   }
   
-  public func displayUpdateStatus() -> Bool {
-    guard self.configuration.dialogTypeValue != .none else {
-      return false
+  @discardableResult
+  public func displayUpdateStatus(forced: Bool = false) -> Bool {
+    
+    let result = AppGuardChecker.needDisplayScreen()
+    
+    if (forced || result.willDisplay) && result.context != .none {
+      if var controller =  self.controller(for: result.context) {
+        let coordinator = AppGuardCoordinator(controller: controller, in: result.context)
+        controller.coordinator = coordinator
+        
+        //Prepare animation
+        let alertPresentation = self.graphicContext.jellyCustomTransition
+        self.jellyAnimator = JellyAnimator(presentation: alertPresentation)
+        self.jellyAnimator?.prepare(viewController: controller)
+        
+        //Display
+        self.uiDelegate?.guardControllerWillAppear(for: result.context)
+        self.dataSource?.presenterController()?.present(controller, animated: true, completion: {
+          self.uiDelegate?.guardControllerDidAppear(for: result.context)
+        })
+      } else {
+        return false
+      }
     }
-    return true
+    
+    return result.willDisplay
+  }
+  
+  private func controller(`for` context: AppGuardContextType) -> (UIViewController & AppGuardable)?{
+    switch context {
+    case .lastUpdateChangelog:
+      return self.dataSource?.customChangelogController()
+    case .mandatoryUpdate, .recommandedUpdate:
+      return self.dataSource?.customUpdateController()
+    default:
+      return nil
+    }
   }
 }
 
+
+// MARK: - AppGuardDataSource
 extension AppGuard: AppGuardDataSource {
-  public func customUpdateController() -> AppGuardUpdateViewController {
+  public func customUpdateController() -> AppGuardUpdateViewController & AppGuardable {
     return AppGuardUpdateViewController()
   }
   
-  public func customChangelogController() -> AppGuardChangelogViewController {
+  public func customChangelogController() -> AppGuardChangelogViewController & AppGuardable {
     return AppGuardChangelogViewController()
   }
+  
+  public func presenterController() -> UIViewController? {
+    return nil
+  }
 }
+

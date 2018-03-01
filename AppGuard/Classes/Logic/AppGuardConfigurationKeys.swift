@@ -30,6 +30,8 @@ public enum AppGuardConfigurationKeys: String {
   case changelogContent = "update_changelog_content"
   case title = "update_title"
   case imageUrl = "update_imageURL"
+  case laterButtonLabel = "update_laterButtonLabel"
+  case maxDaysBetweenDisplay = "udpate_maxDaysBetweenDisplay"
   
   static let allKeys: [AppGuardConfigurationKeys] = [.deeplink,
                                                      .dialogType,
@@ -39,13 +41,14 @@ public enum AppGuardConfigurationKeys: String {
                                                      .title,
                                                      .imageUrl]
   
-  static let allIntKeys: [AppGuardConfigurationKeys] = [.dialogType]
+  static let allIntKeys: [AppGuardConfigurationKeys] = [.dialogType, .maxDaysBetweenDisplay]
   static let allStringKeys: [AppGuardConfigurationKeys] = [.deeplink,
                                                         .content,
                                                         .actionButtonLabel,
                                                         .changelogContent,
                                                         .title,
-                                                        .imageUrl]
+                                                        .imageUrl,
+                                                        .laterButtonLabel]
   
   public var userDefaultsCustomKey: String {
     return "AppGuard.UserDefaults.configuration.key.\(self)"

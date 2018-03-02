@@ -5,5 +5,8 @@
   "my_action_label_key": "Custom action label",
   "my_changelog_content_key": "Custom changelog text",
   "my_title_key": "Custom title",
-  "my_imageurl_key": "Custom image URL"
+  "my_imageurl_key": "Custom image URL",
+  "my_laterButtonLabel_key": "Plus tard",
+  "my_maxDaysBetweenDisplay_key": 3,
+  "my_versionCode_key": 2
 }

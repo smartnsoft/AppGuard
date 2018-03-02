@@ -28,11 +28,11 @@ public protocol AppGuardable {
 
 public enum AppGuardContextKeys: String {
   case lastDisplayUpdate
-  case lastSeenInformativeUpdate
+  case lastVersionCodeUpdateDisplayed
   case lastUpdateLater
   
   static let allKeys: [AppGuardContextKeys] = [.lastDisplayUpdate,
-                                               .lastSeenInformativeUpdate,
+                                               .lastVersionCodeUpdateDisplayed,
                                                .lastUpdateLater]
   
   var userDefaultsKey: String {
@@ -51,13 +51,13 @@ public final class AppGuardContext {
     }
   }
   
-  public internal(set) var lastSeenInformativeUpdate: Date? {
+  public internal(set) var lastVersionCodeUpdateDisplayed: Int {
     get {
-      return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastSeenInformativeUpdate.userDefaultsKey) as? Date
+      return UserDefaults.standard.integer(forKey: AppGuardContextKeys.lastVersionCodeUpdateDisplayed.userDefaultsKey)
     }
     
     set {
-      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastSeenInformativeUpdate.userDefaultsKey)
+      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastVersionCodeUpdateDisplayed.userDefaultsKey)
     }
   }
   

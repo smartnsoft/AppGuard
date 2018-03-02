@@ -1,9 +1,0 @@
-{
-  "update_deeplink": "dfgdfg",
-  "update_dialogType": 2,
-  "update_content": "Votre version de l'application n'est plus valable, nous vous invitions à mettre à jour l'application",
-  "update_actionButtonLabel": "Mettre à jour",
-  "update_changelog_content": "- Nouvelle feature 1\n- Nouvelle feature 2\n- Nouvelle feature 3\n- Nouvelle feature 4\n- Nouvelle feature 5\n- Nouvelle feature 6\n- Nouvelle feature 7\n- Nouvelle feature 8",
-  "update_title": "Mettez à jour votre app",
-  "update_imageURL": "Default image URL"
-}

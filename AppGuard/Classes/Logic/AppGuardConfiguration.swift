@@ -49,6 +49,16 @@ public final class AppGuardConfiguration {
     return AppGuardContextType(rawValue: self.dialogType) ?? .none
   }
   
+  public internal(set) var versionCode: Int {
+    get {
+      return UserDefaults.standard.integer(forKey: AppGuardConfigurationKeys.versionCode.userDefaultsKey)
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardConfigurationKeys.versionCode.userDefaultsKey)
+    }
+  }
+  
   public internal(set) var content: String? {
     get {
       return UserDefaults.standard.string(forKey: AppGuardConfigurationKeys.content.userDefaultsKey)

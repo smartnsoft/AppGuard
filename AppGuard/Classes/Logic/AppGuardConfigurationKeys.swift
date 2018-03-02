@@ -23,15 +23,16 @@
 import Foundation
 
 public enum AppGuardConfigurationKeys: String {
-  case deeplink = "update_deeplink"
-  case dialogType = "update_dialogType"
-  case content = "update_content"
-  case actionButtonLabel = "update_actionButtonLabel"
-  case changelogContent = "update_changelog_content"
-  case title = "update_title"
-  case imageUrl = "update_imageURL"
-  case laterButtonLabel = "update_laterButtonLabel"
-  case maxDaysBetweenDisplay = "udpate_maxDaysBetweenDisplay"
+  case deeplink
+  case dialogType
+  case content
+  case actionButtonLabel
+  case changelogContent
+  case title
+  case imageUrl
+  case laterButtonLabel
+  case maxDaysBetweenDisplay
+  case versionCode
   
   static let allKeys: [AppGuardConfigurationKeys] = [.deeplink,
                                                      .dialogType,
@@ -39,16 +40,22 @@ public enum AppGuardConfigurationKeys: String {
                                                      .actionButtonLabel,
                                                      .changelogContent,
                                                      .title,
-                                                     .imageUrl]
+                                                     .imageUrl,
+                                                     .versionCode,
+                                                     .maxDaysBetweenDisplay,
+                                                     .laterButtonLabel]
   
-  static let allIntKeys: [AppGuardConfigurationKeys] = [.dialogType, .maxDaysBetweenDisplay]
+  static let allIntKeys: [AppGuardConfigurationKeys] = [.dialogType,
+                                                        .maxDaysBetweenDisplay,
+                                                        .versionCode]
+  
   static let allStringKeys: [AppGuardConfigurationKeys] = [.deeplink,
-                                                        .content,
-                                                        .actionButtonLabel,
-                                                        .changelogContent,
-                                                        .title,
-                                                        .imageUrl,
-                                                        .laterButtonLabel]
+                                                           .content,
+                                                           .actionButtonLabel,
+                                                           .changelogContent,
+                                                           .title,
+                                                           .imageUrl,
+                                                           .laterButtonLabel]
   
   public var userDefaultsCustomKey: String {
     return "AppGuard.UserDefaults.configuration.key.\(self)"

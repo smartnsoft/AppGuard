@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		3AC0F36C81B6C6E4973BC388 /* Pods_AppGuardAbstract_AppGuard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F0A0CBA07F00D174A73B7A /* Pods_AppGuardAbstract_AppGuard_Tests.framework */; };
 		449C24452047FCFE001176DD /* XCTAssert+Optionnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */; };
-		449C24512048647D001176DD /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24502048647D001176DD /* configuration.json */; };
+		449C24512048647D001176DD /* configuration1.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24502048647D001176DD /* configuration1.json */; };
+		449C24532049BF48001176DD /* icon-animated.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24522049BF48001176DD /* icon-animated.json */; };
+		449C24562049C71B001176DD /* configuration3.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24542049C71B001176DD /* configuration3.json */; };
+		449C24572049C71B001176DD /* configuration2.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24552049C71B001176DD /* configuration2.json */; };
 		44ED0A642047057F007723C2 /* custom_keys_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A622047057B007723C2 /* custom_keys_configuration.json */; };
 		44ED0A6520470736007723C2 /* StubsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED0A57204701BF007723C2 /* StubsReader.swift */; };
 		44ED0A68204709B9007723C2 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A66204709B8007723C2 /* configuration.json */; };
@@ -40,7 +43,10 @@
 		2B520238E6C70632B54150C0 /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3244E92520DC7D996EA5E73E /* Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Tests/Pods-AppGuardAbstract-AppGuard_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTAssert+Optionnal.swift"; sourceTree = "<group>"; };
-		449C24502048647D001176DD /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
+		449C24502048647D001176DD /* configuration1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration1.json; sourceTree = "<group>"; };
+		449C24522049BF48001176DD /* icon-animated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "icon-animated.json"; sourceTree = "<group>"; };
+		449C24542049C71B001176DD /* configuration3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration3.json; sourceTree = "<group>"; };
+		449C24552049C71B001176DD /* configuration2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration2.json; sourceTree = "<group>"; };
 		44ED0A57204701BF007723C2 /* StubsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsReader.swift; sourceTree = "<group>"; };
 		44ED0A622047057B007723C2 /* custom_keys_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom_keys_configuration.json; sourceTree = "<group>"; };
 		44ED0A66204709B8007723C2 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
@@ -127,7 +133,10 @@
 		607FACD21AFB9204008FA782 /* Example for AppGuard */ = {
 			isa = PBXGroup;
 			children = (
-				449C24502048647D001176DD /* configuration.json */,
+				449C24502048647D001176DD /* configuration1.json */,
+				449C24552049C71B001176DD /* configuration2.json */,
+				449C24542049C71B001176DD /* configuration3.json */,
+				449C24522049BF48001176DD /* icon-animated.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -279,9 +288,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449C24532049BF48001176DD /* icon-animated.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				449C24512048647D001176DD /* configuration.json in Resources */,
+				449C24572049C71B001176DD /* configuration2.json in Resources */,
+				449C24512048647D001176DD /* configuration1.json in Resources */,
+				449C24562049C71B001176DD /* configuration3.json in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,12 +386,14 @@
 				"${BUILT_PRODUCTS_DIR}/AppGuard/AppGuard.framework",
 				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
 				"${BUILT_PRODUCTS_DIR}/Jelly/Jelly.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppGuard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jelly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -396,6 +410,7 @@
 				"${BUILT_PRODUCTS_DIR}/AppGuard/AppGuard.framework",
 				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
 				"${BUILT_PRODUCTS_DIR}/Jelly/Jelly.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -403,6 +418,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppGuard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jelly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

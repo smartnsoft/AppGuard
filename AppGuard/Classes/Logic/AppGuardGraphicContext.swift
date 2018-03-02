@@ -30,11 +30,11 @@ final public class AppGuardGraphicContext {
   
   public var roundedButton = true
   
-  public lazy var actionButtonTintColor = UIColor.blue
+  public lazy var actionButtonBackgroundColor: UIColor? = UIColor.blue
   public lazy var actionButtonTitleColor = UIColor.white
   public lazy var actionButtonFont = UIFont.boldSystemFont(ofSize: 16)
   
-  public lazy var laterButtonTintColor = UIColor.clear
+  public lazy var laterButtonBackgroundColor: UIColor? = UIColor.clear
   public lazy var laterButtonTitleColor = UIColor.darkGray
   public lazy var laterButtonFont = UIFont.boldSystemFont(ofSize: 15)
   
@@ -54,7 +54,7 @@ final public class AppGuardGraphicContext {
                                                 directionShow: .top,
                                                 directionDismiss: .bottom,
                                                 widthForViewController: .custom(value: 250),
-                                                heightForViewController: .fullscreen)
+                                                heightForViewController: .custom(value: 400))
     presentation.isTapBackgroundToDismissEnabled = false
     return presentation
   }()

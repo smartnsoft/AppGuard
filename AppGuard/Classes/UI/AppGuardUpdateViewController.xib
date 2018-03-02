@@ -63,7 +63,7 @@
                         </button>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-ig-vJs">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-ig-vJs">
                     <rect key="frame" x="30" y="277.5" width="315" height="241.5"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="Oh5-fb-0Nw"/>

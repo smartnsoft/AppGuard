@@ -21,25 +21,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-RX-rXi">
-                                <rect key="frame" x="168" y="318" width="38" height="30"/>
-                                <state key="normal" title="Show"/>
-                                <connections>
-                                    <action selector="didTapShowButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UEq-R4-Wlu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uzK-wg-xQs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oCv-uK-Wjs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="vqR-g1-DuF"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Mandatory"/>
+                                            <segment title="Recommanded"/>
+                                            <segment title="Changelog"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didChangedGuardType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oMP-uC-30X"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-RX-rXi">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                        <state key="normal" title="Show">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapShowButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UEq-R4-Wlu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.40089904970000001" green="0.52483209019999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aGy-RX-rXi" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="12U-Aa-cZc"/>
-                            <constraint firstItem="aGy-RX-rXi" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="P3u-vs-6rC"/>
+                            <constraint firstItem="uzK-wg-xQs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="I3q-L2-yju"/>
+                            <constraint firstAttribute="trailing" secondItem="uzK-wg-xQs" secondAttribute="trailing" id="eUr-FP-dAm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="uzK-wg-xQs" secondAttribute="bottom" id="gRE-f9-dNV"/>
+                            <constraint firstItem="uzK-wg-xQs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="npf-EE-Haq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="veo-Xv-Xdi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="74"/>
+            <point key="canvasLocation" x="453.60000000000002" y="73.313343328335833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Ik-6Y-8CW">

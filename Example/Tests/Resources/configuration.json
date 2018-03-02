@@ -1,9 +1,12 @@
 {
-  "update_deeplink": "http://www.google.fr",
-  "update_dialogType": 2,
-  "update_content": "Default content text",
-  "update_actionButtonLabel": "Default action label",
-  "update_changelog_content": "Default changelog text",
-  "update_title": "Default title",
-  "update_imageURL": "Default image URL"
+  "deeplink": "http://www.google.fr",
+  "dialogType": 2,
+  "content": "Default content text",
+  "actionButtonLabel": "Default action label",
+  "changelogContent": "Default changelog text",
+  "title": "Default title",
+  "imageUrl": "Default image URL",
+  "laterButtonLabel": "Plus tard",
+  "maxDaysBetweenDisplay": 3,
+  "versionCode": 22
 }

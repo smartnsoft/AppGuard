@@ -21,13 +21,11 @@
 // SOFTWARE.
 
 import UIKit
+import Extra
 
-public class AppGuardUpdateViewController: UIViewController, AppGuardable {
+public class AppGuardUpdateViewController: AppGuardViewController, AppGuardable {
   
-  @IBOutlet public weak var ibImageView: UIImageView?
-  @IBOutlet public weak var ibTitleLabel: UILabel?
   @IBOutlet public weak var ibDescriptionLabel: UILabel?
-  @IBOutlet public weak var ibActionButton: UIButton?
   @IBOutlet public weak var ibLaterButton: UIButton?
   
   public var coordinator: AppGuardCoordinator?
@@ -45,14 +43,8 @@ public class AppGuardUpdateViewController: UIViewController, AppGuardable {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
-  
-    self.ibTitleLabel?.textColor = AppGuard.default.graphicContext.contentColor
-    self.ibTitleLabel?.font = AppGuard.default.graphicContext.contentFont
     
     if AppGuard.default.graphicContext.roundedButton {
-      self.ibActionButton?.layer.masksToBounds = true
-      self.ibActionButton?.layer.cornerRadius = 22
-      
       self.ibLaterButton?.layer.masksToBounds = true
       self.ibLaterButton?.layer.cornerRadius = 22
     }
@@ -60,17 +52,20 @@ public class AppGuardUpdateViewController: UIViewController, AppGuardable {
     self.ibDescriptionLabel?.font = AppGuard.default.graphicContext.contentFont
     self.ibDescriptionLabel?.text = AppGuard.default.configuration.content
     
-    self.ibActionButton?.setTitle(AppGuard.default.configuration.actionButtonLabel,
-                                  for: .normal)
+    self.ibLaterButton?.titleLabel?.font = AppGuard.default.graphicContext.laterButtonFont
     self.ibLaterButton?.setTitle(AppGuard.default.configuration.laterButtonLabel,
                                  for: .normal)
+    self.ibLaterButton?.setTitleColor(AppGuard.default.graphicContext.laterButtonTitleColor,
+                                      for: .normal)
+    self.ibLaterButton?.setBackgroundImage(AppGuard.default.graphicContext.laterButtonBackgroundColor?.ex.toImage(),
+                                            for: .normal)
     
-    self.ibImageView?.image = AppGuard.default.graphicContext.image
     self.ibLaterButton?.isHidden = (self.coordinator?.contextType == .mandatoryUpdate)
     
   }
   
   @IBAction public func didTapLaterButton(_ sender: Any) {
+    AppGuard.default.context.lastUpdateLater = Date()
     self.coordinator?.didChooseLater()
   }
   

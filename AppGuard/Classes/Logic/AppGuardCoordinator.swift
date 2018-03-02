@@ -48,14 +48,13 @@ public final class AppGuardCoordinator {
       AppGuard.default.uiDelegate?.didChooseAction(for: self.contextType)
       AppGuard.default.uiDelegate?.guardControllerDidDisappear(for: self.contextType)
     })
-    
   }
   
   private func dismissLater() {
     
     AppGuard.default.uiDelegate?.guardControllerWillDisappear(for: self.contextType)
     self.controller?.dismiss(animated: true, completion: {
-      AppGuard.default.uiDelegate?.didChooseAction(for: self.contextType)
+      AppGuard.default.uiDelegate?.didChooseLater(for: self.contextType)
       AppGuard.default.uiDelegate?.guardControllerDidDisappear(for: self.contextType)
     })
   }

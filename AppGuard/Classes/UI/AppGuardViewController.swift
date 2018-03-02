@@ -20,45 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-public class AppGuardChangelogViewController: AppGuardViewController, AppGuardable {
+public class AppGuardViewController: UIViewController {
+  @IBOutlet public weak var ibImageView: UIImageView?
+  @IBOutlet public weak var ibTitleLabel: UILabel?
   
-  @IBOutlet public weak var ibTextView: UITextView?
+  @IBOutlet public weak var ibActionButton: UIButton?
   
-  public var coordinator: AppGuardCoordinator?
-  
-  public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    let nibName = "AppGuardChangelogViewController"
-    let bundle: Bundle = Bundle.bundleForResource(name: nibName, ofType: "nib")
-    
-    super.init(nibName: nibName, bundle: bundle)
-  }
-  
-  public required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
-  
-  override public func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.ibTextView?.textColor = AppGuard.default.graphicContext.contentColor
-    self.ibTextView?.font = AppGuard.default.graphicContext.contentFont
-    self.ibTextView?.text = AppGuard.default.configuration.changelogContent
-    
     self.ibTitleLabel?.text = AppGuard.default.configuration.title
+    self.ibTitleLabel?.textColor = AppGuard.default.graphicContext.contentColor
+    self.ibTitleLabel?.font = AppGuard.default.graphicContext.titleFont
+    
+    self.ibActionButton?.titleLabel?.font = AppGuard.default.graphicContext.actionButtonFont
     self.ibActionButton?.setTitle(AppGuard.default.configuration.actionButtonLabel,
                                   for: .normal)
-    
-    
-  }
-  
-  @IBAction public func didTapActionButton(_ sender: Any) {
-    if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
-      let version = Int(bundleVersion) {
-      AppGuard.default.context.lastVersionCodeUpdateDisplayed = version
+    self.ibActionButton?.setTitleColor(AppGuard.default.graphicContext.actionButtonTitleColor,
+                                       for: .normal)
+    self.ibActionButton?.setBackgroundImage(AppGuard.default.graphicContext.actionButtonBackgroundColor?.ex.toImage(),
+                                            for: .normal)
+    if AppGuard.default.graphicContext.roundedButton {
+      self.ibActionButton?.layer.masksToBounds = true
+      self.ibActionButton?.layer.cornerRadius = 22
     }
     
-    self.coordinator?.didChooseAction()
+    AppGuard.default.dataSource?.configureImageView(self.ibImageView)
   }
 }

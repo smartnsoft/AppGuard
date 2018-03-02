@@ -38,9 +38,8 @@ public protocol AppGuardUIDelegate: class {
 
 /// Configure your custom controllers to display instead of default ones
 public protocol AppGuardDataSource: class {
-  func customUpdateController() -> AppGuardUpdateViewController & AppGuardable
-  func customChangelogController() -> AppGuardChangelogViewController & AppGuardable
   func presenterController() -> UIViewController?
+  func configureImageView(_ imageView: UIImageView?)
 }
 
 public final class AppGuard {
@@ -62,7 +61,6 @@ public final class AppGuard {
     if (UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) as? String)?.isEmpty == true || UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) == nil {
       AppGuardConfigurationKeysBinder.configureDefaultKeysBinding()
     }
-    self.dataSource = self
   }
   
   public func updateConfig(from configurationData: [String: Any?]) {
@@ -87,6 +85,7 @@ public final class AppGuard {
         //Display
         self.uiDelegate?.guardControllerWillAppear(for: result.context)
         self.dataSource?.presenterController()?.present(controller, animated: true, completion: {
+          self.context.lastDisplayUpdate = Date()
           self.uiDelegate?.guardControllerDidAppear(for: result.context)
         })
       } else {
@@ -100,28 +99,11 @@ public final class AppGuard {
   private func controller(`for` context: AppGuardContextType) -> (UIViewController & AppGuardable)?{
     switch context {
     case .lastUpdateChangelog:
-      return self.dataSource?.customChangelogController()
+      return AppGuardChangelogViewController()
     case .mandatoryUpdate, .recommandedUpdate:
-      return self.dataSource?.customUpdateController()
+      return AppGuardUpdateViewController()
     default:
       return nil
     }
   }
 }
-
-
-// MARK: - AppGuardDataSource
-extension AppGuard: AppGuardDataSource {
-  public func customUpdateController() -> AppGuardUpdateViewController & AppGuardable {
-    return AppGuardUpdateViewController()
-  }
-  
-  public func customChangelogController() -> AppGuardChangelogViewController & AppGuardable {
-    return AppGuardChangelogViewController()
-  }
-  
-  public func presenterController() -> UIViewController? {
-    return nil
-  }
-}
-

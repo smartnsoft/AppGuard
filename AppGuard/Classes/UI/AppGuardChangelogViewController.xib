@@ -13,6 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppGuardChangelogViewController" customModule="AppGuard" customModuleProvider="target">
             <connections>
+                <outlet property="ibActionButton" destination="5Fh-to-Eyf" id="wBh-NP-uIt"/>
+                <outlet property="ibImageView" destination="c6X-Jt-4VG" id="PzG-pa-tnr"/>
+                <outlet property="ibTextView" destination="ikm-i8-cw4" id="OP5-Bl-R92"/>
+                <outlet property="ibTitleLabel" destination="C7D-mW-CMQ" id="daH-3N-PPy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

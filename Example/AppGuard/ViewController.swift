@@ -7,29 +7,54 @@
 
 import UIKit
 import AppGuard
+import Extra
+import Jelly
+import Lottie
 
 class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let path = Bundle.main.path(forResource: "configuration", ofType: "json") {
+    self.prepareAppGuard()
+    
+    self.updateConfigFile(nb: 1)
+
+  }
+  
+  private func updateConfigFile(nb: Int) {
+    if let path = Bundle.main.path(forResource: "configuration\(nb)", ofType: "json") {
       do {
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
         if let localJSONConfiguration = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any?] {
-          AppGuard.default.prepare()
           AppGuard.default.updateConfig(from: localJSONConfiguration)
-          AppGuard.default.dataSource = self
-          AppGuard.default.uiDelegate = self
-          
         }
       } catch {
         // handle error
       }
+      
     }
-    
   }
   
+  private func prepareAppGuard() {
+    AppGuard.default.prepare()
+    AppGuard.default.dataSource = self
+    AppGuard.default.uiDelegate = self
+    
+    AppGuard.default.graphicContext.actionButtonBackgroundColor = UIColor.ex.fromHexa("#17b8c5")
+    if var transition = AppGuard.default.graphicContext.jellyCustomTransition as? JellySlideInPresentation {
+      transition.heightForViewController = .custom(value: self.navigationController?.view.frame.height ?? 0 - 100)
+      transition.widthForViewController = .custom(value: self.navigationController?.view.frame.width ?? 0 - 40)
+    }
+  }
+  
+  @IBAction func didChangedGuardType(_ sender: UISegmentedControl) {
+    
+    let index = sender.selectedSegmentIndex
+    
+    self.updateConfigFile(nb: index + 1)
+    
+  }
   @IBAction func didTapShowButton(_ sender: Any) {
     AppGuard.default.displayUpdateStatus(forced: true)
   }
@@ -38,18 +63,23 @@ class ViewController: UIViewController {
 
 // MARK: - AppGuardDataSource
 extension ViewController: AppGuardDataSource {
-  func customUpdateController() -> AppGuardUpdateViewController & AppGuardable {
-    return AppGuardUpdateViewController()
+  func configureImageView(_ imageView: UIImageView?) {
+    if let imageView = imageView {
+      let lottieView = LOTAnimationView(name: "icon-animated")
+      lottieView.frame = imageView.frame
+      lottieView.contentMode = .scaleAspectFit
+      lottieView.loopAnimation = true
+      imageView.ex.addSubview(lottieView)
+      lottieView.play()
+    }
+    
   }
   
-  func customChangelogController() -> AppGuardChangelogViewController & AppGuardable {
-    return AppGuardChangelogViewController()
-  }
   
   func presenterController() -> UIViewController? {
     return self
   }
-
+  
 }
 
 

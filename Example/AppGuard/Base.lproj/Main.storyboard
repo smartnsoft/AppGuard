@@ -39,8 +39,23 @@
                                             <action selector="didChangedGuardType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oMP-uC-30X"/>
                                         </connections>
                                     </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lQ9-ew-zTx">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Xdf-2D-wFj"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Default"/>
+                                            <segment title="Bottom"/>
+                                            <segment title="Slide in"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didChangedTransitionType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="xNz-l3-5U6"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-RX-rXi">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="475"/>
                                         <state key="normal" title="Show">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>

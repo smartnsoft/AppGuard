@@ -11,15 +11,55 @@ import Extra
 import Jelly
 import Lottie
 
+enum TransitionType: Int {
+  case `default`
+  case bottom
+  case slideIn
+  
+  func configure() {
+    var presentation: JellyPresentation
+    switch self {
+    case .default:
+      presentation = JellySlideInPresentation(cornerRadius: 15,
+                                              backgroundStyle: .blur(effectStyle: .extraLight),
+                                              duration: .medium,
+                                              directionShow: .top,
+                                              directionDismiss: .bottom,
+                                              widthForViewController: .custom(value: (UIApplication.shared.keyWindow?.frame.width ?? 0) * 0.8),
+                                              heightForViewController: .custom(value: (UIApplication.shared.keyWindow?.frame.height ?? 0) * 0.6))
+      presentation.isTapBackgroundToDismissEnabled = false
+    case .slideIn:
+      presentation = JellySlideInPresentation(cornerRadius: 15,
+                                              backgroundStyle: .blur(effectStyle: .dark),
+                                              jellyness: .jellier,
+                                              duration: .medium,
+                                              directionShow: .left,
+                                              directionDismiss: .right,
+                                              widthForViewController: .custom(value: (UIApplication.shared.keyWindow?.frame.width ?? 0) * 0.8),
+                                              heightForViewController: .custom(value: (UIApplication.shared.keyWindow?.frame.height ?? 0) * 0.6))
+    case .bottom:
+      presentation = {
+        var jellyShift = JellyShiftInPresentation()
+        jellyShift.direction = .bottom
+        jellyShift.backgroundStyle = .blur(effectStyle: .light)
+        jellyShift.size = .custom(value: 500)
+        return jellyShift
+      }()
+    }
+    
+    AppGuard.default.graphicContext.jellyCustomTransition = presentation
+  }
+}
+
 class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    TransitionType.default.configure()
     self.prepareAppGuard()
     
     self.updateConfigFile(nb: 1)
-
+    
   }
   
   private func updateConfigFile(nb: Int) {
@@ -40,12 +80,7 @@ class ViewController: UIViewController {
     AppGuard.default.prepare()
     AppGuard.default.dataSource = self
     AppGuard.default.uiDelegate = self
-    
     AppGuard.default.graphicContext.actionButtonBackgroundColor = UIColor.ex.fromHexa("#17b8c5")
-    if var transition = AppGuard.default.graphicContext.jellyCustomTransition as? JellySlideInPresentation {
-      transition.heightForViewController = .custom(value: self.navigationController?.view.frame.height ?? 0 - 100)
-      transition.widthForViewController = .custom(value: self.navigationController?.view.frame.width ?? 0 - 40)
-    }
   }
   
   @IBAction func didChangedGuardType(_ sender: UISegmentedControl) {
@@ -53,8 +88,13 @@ class ViewController: UIViewController {
     let index = sender.selectedSegmentIndex
     
     self.updateConfigFile(nb: index + 1)
-    
   }
+  
+  @IBAction func didChangedTransitionType(_ sender: UISegmentedControl) {
+    let type = TransitionType(rawValue: sender.selectedSegmentIndex)
+    type?.configure()
+  }
+  
   @IBAction func didTapShowButton(_ sender: Any) {
     AppGuard.default.displayUpdateStatus(forced: true)
   }

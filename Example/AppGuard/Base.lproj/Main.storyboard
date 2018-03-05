@@ -55,12 +55,28 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-RX-rXi">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="475"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="80"/>
                                         <state key="normal" title="Show">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="didTapShowButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UEq-R4-Wlu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-Wg-R0a">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="80"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Fetch local config"/>
+                                        <connections>
+                                            <action selector="didTapFetchLocalConfig:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X12-qf-iki"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfX-W4-qbx">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="275"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Retrieve remote config (Firebase)"/>
+                                        <connections>
+                                            <action selector="didTapRetrieveUserConfigButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yN2-wU-U0b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,6 +91,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="veo-Xv-Xdi"/>
+                    <connections>
+                        <outlet property="ibDialogTypeSegmentedControl" destination="oCv-uK-Wjs" id="IU8-TV-cIx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

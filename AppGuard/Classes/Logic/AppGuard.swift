@@ -72,7 +72,7 @@ public final class AppGuard {
     
     let result = AppGuardChecker.needDisplayScreen()
     
-    if (forced || result.willDisplay) && result.context != .none {
+    if forced || (result.willDisplay && result.context != .none) {
       if var controller =  self.controller(for: result.context) {
         let coordinator = AppGuardCoordinator(controller: controller, in: result.context)
         controller.coordinator = coordinator

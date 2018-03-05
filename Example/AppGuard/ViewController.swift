@@ -10,6 +10,8 @@ import AppGuard
 import Extra
 import Jelly
 import Lottie
+import FirebaseRemoteConfig
+import Kingfisher
 
 enum TransitionType: Int {
   case `default`
@@ -42,7 +44,7 @@ enum TransitionType: Int {
         var jellyShift = JellyShiftInPresentation()
         jellyShift.direction = .bottom
         jellyShift.backgroundStyle = .blur(effectStyle: .light)
-        jellyShift.size = .custom(value: 500)
+        jellyShift.size = .custom(value: 600)
         return jellyShift
       }()
     }
@@ -52,6 +54,8 @@ enum TransitionType: Int {
 }
 
 class ViewController: UIViewController {
+  
+  @IBOutlet weak var ibDialogTypeSegmentedControl: UISegmentedControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -63,6 +67,7 @@ class ViewController: UIViewController {
   }
   
   private func updateConfigFile(nb: Int) {
+    AppGuardConfigurationKeysBinder.configureDefaultKeysBinding()
     if let path = Bundle.main.path(forResource: "configuration\(nb)", ofType: "json") {
       do {
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
@@ -99,12 +104,66 @@ class ViewController: UIViewController {
     AppGuard.default.displayUpdateStatus(forced: true)
   }
   
+  @IBAction func didTapFetchLocalConfig(_ sender: Any) {
+    self.updateConfigFile(nb: self.ibDialogTypeSegmentedControl.selectedSegmentIndex + 1)
+  }
+  
+  
+  @IBAction func didTapRetrieveUserConfigButton(_ sender: Any) {
+    
+    let binding: [String: String?] = [AppGuardConfigurationKeys.deeplink.rawValue: "update_deeplink",
+                                      AppGuardConfigurationKeys.dialogType.rawValue: "update_dialogType",
+                                      AppGuardConfigurationKeys.content.rawValue: "update_content",
+                                      AppGuardConfigurationKeys.actionButtonLabel.rawValue: "update_actionButtonLabel",
+                                      AppGuardConfigurationKeys.changelogContent.rawValue: "update_changelog_content",
+                                      AppGuardConfigurationKeys.title.rawValue: "update_title",
+                                      AppGuardConfigurationKeys.imageUrl.rawValue: "update_imageURL",
+                                      AppGuardConfigurationKeys.versionCode.rawValue: "current_version_code"]
+    AppGuardConfigurationKeysBinder.bindConfigurationKeys(binding)
+    
+    let remoteConfig = RemoteConfig.remoteConfig()
+    remoteConfig.fetch(withExpirationDuration: 1) { (status, error) in
+      
+      switch status {
+      case .success, .throttled:
+        remoteConfig.activateFetched()
+        AppGuard.default.updateFrom(remoteConfig: remoteConfig)
+        
+        let message = """
+        title : \(AppGuard.default.configuration.title ?? "") \n
+        deeplink : \(AppGuard.default.configuration.deeplink ?? "") \n
+        dialogType : \(AppGuard.default.configuration.dialogType) \n
+        content : \(AppGuard.default.configuration.content ?? "") \n
+        actionButtonLabel : \(AppGuard.default.configuration.actionButtonLabel ?? "") \n
+        changelogContent : \(AppGuard.default.configuration.changelogContent ?? "") \n
+        title : \(AppGuard.default.configuration.title ?? "") \n
+        imageUrl : \(AppGuard.default.configuration.imageUrl ?? "") \n
+        versionCode : \(AppGuard.default.configuration.versionCode) \n
+        """
+        
+        let alertController = UIAlertController(title: "Configuration updated from Firebase 👌",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let dismissItem = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(dismissItem)
+        self.present(alertController, animated: true, completion: nil)
+      case .failure:
+        print("Cannot retrieve Firebase remote config, check your SDK integration first")
+      default:
+        break
+      }
+    }
+  }
+  
 }
 
 // MARK: - AppGuardDataSource
 extension ViewController: AppGuardDataSource {
   func configureImageView(_ imageView: UIImageView?) {
-    if let imageView = imageView {
+    
+    if let sImageUrl = AppGuard.default.configuration.imageUrl, let imageURL = URL(string: sImageUrl) {
+      imageView?.kf.setImage(with: imageURL)
+    } else if let imageView = imageView {
       let lottieView = LOTAnimationView(name: "icon-animated")
       lottieView.frame = imageView.frame
       lottieView.contentMode = .scaleAspectFit

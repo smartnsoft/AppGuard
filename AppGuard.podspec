@@ -20,4 +20,9 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.dependency 'Extra/UIKit', '~> 1.1'
   s.dependency 'Jelly', '~> 1.2'
+  
+  s.subspec 'FirebaseRemoteConfig' do |sp|
+    sp.source_files = 'AppGuard/Classes/Firebase/**/*.{swift}'
+    sp.dependency 'Firebase/RemoteConfig', '~> 4.9'
+  end
 end

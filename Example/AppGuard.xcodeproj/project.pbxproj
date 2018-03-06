@@ -13,6 +13,13 @@
 		449C24532049BF48001176DD /* icon-animated.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24522049BF48001176DD /* icon-animated.json */; };
 		449C24562049C71B001176DD /* configuration3.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24542049C71B001176DD /* configuration3.json */; };
 		449C24572049C71B001176DD /* configuration2.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24552049C71B001176DD /* configuration2.json */; };
+		44C86467204EE47400DE0CE0 /* configuration_updateChangelogFor2.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C86460204EE46D00DE0CE0 /* configuration_updateChangelogFor2.json */; };
+		44C86468204EE47800DE0CE0 /* configuration_mandatoryTo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C8645D204EE46D00DE0CE0 /* configuration_mandatoryTo2.json */; };
+		44C86469204EE47800DE0CE0 /* configuration_mandatoryTo3.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C86461204EE46D00DE0CE0 /* configuration_mandatoryTo3.json */; };
+		44C8646A204EE47800DE0CE0 /* configuration_recommandedTo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C8645E204EE46D00DE0CE0 /* configuration_recommandedTo2.json */; };
+		44C8646B204EE47800DE0CE0 /* configuration_recommandedTo3.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C8645F204EE46D00DE0CE0 /* configuration_recommandedTo3.json */; };
+		44C8646D204EE4B000DE0CE0 /* configuration_updateChangelogFor3.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C8646C204EE4B000DE0CE0 /* configuration_updateChangelogFor3.json */; };
+		44C8646F204EEF1700DE0CE0 /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C8646E204EEF1700DE0CE0 /* UIViewController+TopMost.swift */; };
 		44ED0A642047057F007723C2 /* custom_keys_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A622047057B007723C2 /* custom_keys_configuration.json */; };
 		44ED0A6520470736007723C2 /* StubsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED0A57204701BF007723C2 /* StubsReader.swift */; };
 		44ED0A68204709B9007723C2 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 44ED0A66204709B8007723C2 /* configuration.json */; };
@@ -47,6 +54,13 @@
 		449C24522049BF48001176DD /* icon-animated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "icon-animated.json"; sourceTree = "<group>"; };
 		449C24542049C71B001176DD /* configuration3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration3.json; sourceTree = "<group>"; };
 		449C24552049C71B001176DD /* configuration2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration2.json; sourceTree = "<group>"; };
+		44C8645D204EE46D00DE0CE0 /* configuration_mandatoryTo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_mandatoryTo2.json; sourceTree = "<group>"; };
+		44C8645E204EE46D00DE0CE0 /* configuration_recommandedTo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_recommandedTo2.json; sourceTree = "<group>"; };
+		44C8645F204EE46D00DE0CE0 /* configuration_recommandedTo3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_recommandedTo3.json; sourceTree = "<group>"; };
+		44C86460204EE46D00DE0CE0 /* configuration_updateChangelogFor2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_updateChangelogFor2.json; sourceTree = "<group>"; };
+		44C86461204EE46D00DE0CE0 /* configuration_mandatoryTo3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_mandatoryTo3.json; sourceTree = "<group>"; };
+		44C8646C204EE4B000DE0CE0 /* configuration_updateChangelogFor3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_updateChangelogFor3.json; sourceTree = "<group>"; };
+		44C8646E204EEF1700DE0CE0 /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
 		44ED0A57204701BF007723C2 /* StubsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsReader.swift; sourceTree = "<group>"; };
 		44ED0A622047057B007723C2 /* custom_keys_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom_keys_configuration.json; sourceTree = "<group>"; };
 		44ED0A66204709B8007723C2 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
@@ -103,6 +117,12 @@
 		44ED0A612047057B007723C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44C8645D204EE46D00DE0CE0 /* configuration_mandatoryTo2.json */,
+				44C86461204EE46D00DE0CE0 /* configuration_mandatoryTo3.json */,
+				44C8645E204EE46D00DE0CE0 /* configuration_recommandedTo2.json */,
+				44C8645F204EE46D00DE0CE0 /* configuration_recommandedTo3.json */,
+				44C86460204EE46D00DE0CE0 /* configuration_updateChangelogFor2.json */,
+				44C8646C204EE4B000DE0CE0 /* configuration_updateChangelogFor3.json */,
 				44ED0A66204709B8007723C2 /* configuration.json */,
 				44ED0A622047057B007723C2 /* custom_keys_configuration.json */,
 			);
@@ -164,6 +184,7 @@
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				449C24432047FCD9001176DD /* XCTAssert+Optionnal.swift */,
+				44C8646E204EEF1700DE0CE0 /* UIViewController+TopMost.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -303,7 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				44ED0A68204709B9007723C2 /* configuration.json in Resources */,
+				44C86469204EE47800DE0CE0 /* configuration_mandatoryTo3.json in Resources */,
+				44C8646D204EE4B000DE0CE0 /* configuration_updateChangelogFor3.json in Resources */,
+				44C8646A204EE47800DE0CE0 /* configuration_recommandedTo2.json in Resources */,
+				44C8646B204EE47800DE0CE0 /* configuration_recommandedTo3.json in Resources */,
 				44ED0A642047057F007723C2 /* custom_keys_configuration.json in Resources */,
+				44C86468204EE47800DE0CE0 /* configuration_mandatoryTo2.json in Resources */,
+				44C86467204EE47400DE0CE0 /* configuration_updateChangelogFor2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +488,7 @@
 				44ED0A6520470736007723C2 /* StubsReader.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				449C24452047FCFE001176DD /* XCTAssert+Optionnal.swift in Sources */,
+				44C8646F204EEF1700DE0CE0 /* UIViewController+TopMost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +669,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppGuard_Example.app/AppGuard_Example";
 			};
 			name = Debug;
 		};
@@ -658,6 +687,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppGuard_Example.app/AppGuard_Example";
 			};
 			name = Release;
 		};

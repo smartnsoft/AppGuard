@@ -61,16 +61,6 @@ public final class AppGuardContext {
     }
   }
   
-  public internal(set) var lastUpdateLater: Date? {
-    get {
-      return UserDefaults.standard.value(forKey: AppGuardContextKeys.lastUpdateLater.userDefaultsKey) as? Date
-    }
-    
-    set {
-      UserDefaults.standard.set(newValue, forKey: AppGuardContextKeys.lastUpdateLater.userDefaultsKey)
-    }
-  }
-  
   public func reset() {
     AppGuardContextKeys.allKeys.forEach { (key) in
       UserDefaults.standard.set(nil, forKey: key.userDefaultsKey)

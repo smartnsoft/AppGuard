@@ -1,6 +1,6 @@
 {
   "deeplink": "http://www.google.fr",
-  "dialogType": 2,
+  "dialogType": 1,
   "content": "Default content text",
   "actionButtonLabel": "Default action label",
   "changelogContent": "Default changelog text",

@@ -36,16 +36,21 @@ final class AppGuardChecker {
     var needs = false
     
     
-    if configuration.dialogTypeValue == .mandatoryUpdate || configuration.dialogTypeValue == .recommandedUpdate {
-      if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
-        let version = Int(bundleVersion) {
-        needs = (context.lastDisplayUpdate == nil || Date().isAfter(context.lastDisplayUpdate,
-                                                                    pastDays: configuration.maxDaysBetweenDisplay))
+    if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
+      let version = Int(bundleVersion) {
+      
+      if configuration.dialogTypeValue == .mandatoryUpdate || configuration.dialogTypeValue == .recommandedUpdate {
+        
+        needs = ((context.lastDisplayUpdate == nil || Date().isAfter(context.lastDisplayUpdate,
+                                                                     pastDays: configuration.maxDaysBetweenDisplay))
+          || configuration.dialogTypeValue == .mandatoryUpdate)
           && (version < configuration.versionCode)
+        
+      } else {
+        needs = context.lastVersionCodeUpdateDisplayed < version && version == configuration.versionCode
       }
-    } else {
-      needs = context.lastVersionCodeUpdateDisplayed < configuration.versionCode
     }
+
     return (needs, configuration.dialogTypeValue)
   }
 }

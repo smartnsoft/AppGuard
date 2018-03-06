@@ -65,7 +65,6 @@ public class AppGuardUpdateViewController: AppGuardViewController, AppGuardable 
   }
   
   @IBAction public func didTapLaterButton(_ sender: Any) {
-    AppGuard.default.context.lastUpdateLater = Date()
     self.coordinator?.didChooseLater()
   }
   

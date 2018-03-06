@@ -93,10 +93,13 @@ public final class AppGuard {
         
         //Display
         self.uiDelegate?.guardControllerWillAppear(for: result.context)
+        
+        //Only for Unit tests without UI display
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+          self.presentComplete(for: result.context)
+        }
         self.dataSource?.presenterController()?.present(controller, animated: true, completion: {
-          if result.context == .mandatoryUpdate || result.context == .recommandedUpdate {
-            self.context.lastDisplayUpdate = Date()
-          }
+          self.presentComplete(for: result.context)
           self.uiDelegate?.guardControllerDidAppear(for: result.context)
         })
       } else {
@@ -105,6 +108,17 @@ public final class AppGuard {
     }
     
     return result.willDisplay
+  }
+  
+  private func presentComplete(`for` context: AppGuardContextType) {
+    if context == .mandatoryUpdate || context == .recommandedUpdate {
+      self.context.lastDisplayUpdate = Date()
+    } else {
+      if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
+        let version = Int(bundleVersion) {
+        AppGuard.default.context.lastVersionCodeUpdateDisplayed = version
+      }
+    }
   }
   
   private func controller(`for` context: AppGuardContextType) -> (UIViewController & AppGuardable)?{

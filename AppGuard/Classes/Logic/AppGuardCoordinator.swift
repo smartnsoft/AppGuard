@@ -34,19 +34,10 @@ public final class AppGuardCoordinator {
   }
   
   func didChooseLater() {
-    AppGuard.default.context.lastUpdateLater = Date()
     self.dismissLater()
   }
   
   func didChooseAction() {
-    
-    if self.contextType == .lastUpdateChangelog {
-      if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
-        let version = Int(bundleVersion) {
-        AppGuard.default.context.lastVersionCodeUpdateDisplayed = version
-      }
-    }
-    
     self.dismissAction()
   }
   

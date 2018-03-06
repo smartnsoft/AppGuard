@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     // Be sure to add the GoogleService-Info.plist file
-    FirebaseApp.configure()
+    // FirebaseApp.configure()
     
     // Override point for customization after application launch.
     return true

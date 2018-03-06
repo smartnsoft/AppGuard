@@ -53,12 +53,7 @@ public class AppGuardChangelogViewController: AppGuardViewController, AppGuardab
     
   }
   
-  @IBAction public func didTapActionButton(_ sender: Any) {
-    if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
-      let version = Int(bundleVersion) {
-      AppGuard.default.context.lastVersionCodeUpdateDisplayed = version
-    }
-    
+  @IBAction public func didTapActionButton(_ sender: Any) {    
     self.coordinator?.didChooseAction()
   }
 }

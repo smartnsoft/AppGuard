@@ -61,6 +61,15 @@ public final class AppGuard {
     if (UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) as? String)?.isEmpty == true || UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey) == nil {
       AppGuardConfigurationKeysBinder.configureDefaultKeysBinding()
     }
+    
+    // Be sure for the first time / first update the last version code is setted to not display
+    // the pop-up at each new launch
+    if self.context.lastVersionCodeUpdateDisplayed == 0 {
+      if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
+        let version = Int(bundleVersion) {
+        self.context.lastVersionCodeUpdateDisplayed = version
+      }
+    }
   }
   
   public func updateConfig(from configurationData: [String: Any?]) {
@@ -85,7 +94,9 @@ public final class AppGuard {
         //Display
         self.uiDelegate?.guardControllerWillAppear(for: result.context)
         self.dataSource?.presenterController()?.present(controller, animated: true, completion: {
-          self.context.lastDisplayUpdate = Date()
+          if result.context == .mandatoryUpdate || result.context == .recommandedUpdate {
+            self.context.lastDisplayUpdate = Date()
+          }
           self.uiDelegate?.guardControllerDidAppear(for: result.context)
         })
       } else {

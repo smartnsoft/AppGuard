@@ -39,6 +39,14 @@ public final class AppGuardCoordinator {
   }
   
   func didChooseAction() {
+    
+    if self.contextType == .lastUpdateChangelog {
+      if let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
+        let version = Int(bundleVersion) {
+        AppGuard.default.context.lastVersionCodeUpdateDisplayed = version
+      }
+    }
+    
     self.dismissAction()
   }
   

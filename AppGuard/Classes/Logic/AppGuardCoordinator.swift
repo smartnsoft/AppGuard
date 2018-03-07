@@ -42,6 +42,10 @@ public final class AppGuardCoordinator {
   }
   
   private func dismissAction() {
+    guard self.contextType != .mandatoryUpdate else {
+      AppGuard.default.uiDelegate?.didChooseAction(for: self.contextType)
+      return
+    }
     AppGuard.default.uiDelegate?.guardControllerWillDisappear(for: self.contextType)
     self.controller?.dismiss(animated: true, completion: {
       AppGuard.default.uiDelegate?.didChooseAction(for: self.contextType)

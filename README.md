@@ -141,6 +141,25 @@ AppGuard.default.checkUpdateStatus()
 
 ℹ️ You can optionnaly specify the keys binding with the `AppGuardConfigurationKeysBinder`, to bind your source configuration to the AppGuard configuration. By default, the `AppGuardConfigurationKeys` rawValues will be used.
 
+Imagine that you have a custom JSON structure like that:
+
+``` json
+{
+  "my_deeplink_key": "http://www.google.custom",
+  "my_dialog_type_key": 1,
+  "my_content_key": "Custom content text",
+  "my_action_label_key": "Custom action label",
+  "my_changelog_content_key": "Custom changelog text",
+  "my_title_key": "Custom title",
+  "my_imageurl_key": "Custom image URL",
+  "my_laterButtonLabel_key": "Later",
+  "my_maxDaysBetweenDisplay_key": 3,
+  "my_versionCode_key": 2
+}
+
+```
+
+Change the default keys binding with the `AppGuardConfigurationKeysBinder`:
 
 ``` swift
 let binding: [String: String?] = [AppGuardConfigurationKeys.deeplink.rawValue: "my_deeplink_key",
@@ -167,9 +186,38 @@ You can simply override the `.xib` name of default controllers:
 
 For instance, create a `AppGuardChangelogViewController.xib` with the custom file's owner set to the StarsKit module. IBOutlets are optionnals so you decide what to override or not. 
 
-Don't forget the IBCction links!
+Don't forget the IBAction links!
 
 <p align="center"><img width=95% border=1 src="./img/custom_xib_class.png"></p>
+
+NB: `UIViewController` custom classes support will be available soon.
+
+### UI customization - `AppGuardGraphicContext`
+
+The `AppGuardGraphicContext` can be set with your own values.
+
+```
+AppGuard.default.graphicContext.actionButtonBackgroundColor = UIColor.ex.fromHexa("#17b8c5")
+AppGuard.default.graphicContext.jellyCustomTransition = myCustomJellyPresentation
+```
+
+Customizable properties are:
+
+- `cornerRadius: CGFloat`
+- `roundedButton: Bool`
+- `actionButtonBackgroundColor: UIColor?`
+- `actionButtonTitleColor: UIColor`
+- `actionButtonFont: UIFont`
+- `laterButtonBackgroundColor: UIColor?`
+- `laterButtonTitleColor: UIColor`
+- `laterButtonFont: UIFont`
+- `titleFont: UIFont`
+- `titleColor: UIColor`
+- `contentFont: UIFont`
+- `contentColor: UIColor`
+- `image: UIImage?`
+- `jellyCustomTransition: JellyPresentation`
+
 
 ### Strings customization (Coming Soon)
 

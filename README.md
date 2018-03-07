@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
 [![Platform](https://img.shields.io/cocoapods/p/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
 
-
 AppGuard is a guard for your iOS app, to check / force users to update your app or show what changed.
 
 <p align="center"><img width=32% src="./img/appguard_update_mandatory.png"> <img width=32% src="./img/appguard_update.png"> <img width=32% src="./img/appguard_changelog.png"></p>
@@ -48,9 +47,84 @@ AppGuard offers three default behaviors for your app to:
 
 By a mecanism of revival displays, blocked or dimissable pop-up, the user will / may have to update your app according to the informations and actions displayed.
 
-## Usage
+## Default usage
 
-### Update the configuration
+### Init app guard
+
+``` swift
+// Simply use the prepare method for default configuration properties
+AppGuard.default.prepare()
+
+// Configure the dataSource (and optionnaly the uiDelegate)
+AppGuard.default.dataSource = self
+AppGuard.default.uiDelegate = self
+
+```
+
+### Implement the datasource
+
+It's necessary to implement it to indicate the presenter controller to `AppGuard` and optionnally do something with the `UIImageView`.
+
+``` swift
+// MARK: - AppGuardDataSource
+extension ViewController: AppGuardDataSource {
+  func configureImageView(_ imageView: UIImageView?) {
+    
+	// Do anything with the UIImageView, 
+	// 1- Download an Image with Kingfisher
+	// 2- Add a Lottie animated subview on it
+    
+  }
+  
+  func presenterController() -> UIViewController? {
+    return self
+  }
+  
+}
+
+```
+
+### Implement the UI delegate
+
+The UI delegate will send you lifecycle and user interaction events.
+
+It's strongly recommanded to implement `didChooseLater:` and `didChooseAction:`.
+
+``` swift
+
+// MARK: - AppGuardUIDelegate
+extension ViewController: AppGuardUIDelegate {
+  func guardControllerWillAppear(for context: AppGuardContextType) {
+    print("guardControllerWillAppear")
+  }
+  
+  func guardControllerDidAppear(for context: AppGuardContextType) {
+    print("guardControllerDidAppear")
+  }
+  
+  func guardControllerWillDisappear(for context: AppGuardContextType) {
+    print("guardControllerWillDisappear")
+  }
+  
+  func guardControllerDidDisappear(for context: AppGuardContextType) {
+    print("guardControllerDidDisappear")
+  }
+  
+  func didChooseLater(for context: AppGuardContextType) {
+    print("didChooseLater")
+  }
+  
+  func didChooseAction(for context: AppGuardContextType) {
+    if context == .mandatoryUpdate || context == .recommandedUpdate {
+      UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/fr/app/<your app ID>")!)
+    }
+  }
+  
+}
+
+```
+
+### Update the AppGuard configuration
 
 AppGuard use a simple Dictionnary data to update its configuration.
 
@@ -62,28 +136,60 @@ AppGuard.default.checkUpdateStatus()
 
 ```
 
-- ℹ️ You can optionnaly specify the keys binding with the `AppGuardConfigurationKeysBinder`, to bind your source configuration to the AppGuard configuration. By default, the `AppGuardConfigurationKeys` will be used.
 
-Use the Firebase Podspec
+### Custom keys binding
 
-```ruby
-pod 'AppGuard/FirebaseRemoteConfig'
-```
+ℹ️ You can optionnaly specify the keys binding with the `AppGuardConfigurationKeysBinder`, to bind your source configuration to the AppGuard configuration. By default, the `AppGuardConfigurationKeys` rawValues will be used.
+
 
 ``` swift
+let binding: [String: String?] = [AppGuardConfigurationKeys.deeplink.rawValue: "my_deeplink_key",
+                                      AppGuardConfigurationKeys.dialogType.rawValue: "my_dialog_type_key",
+                                      AppGuardConfigurationKeys.content.rawValue: "my_content_key",
+                                      AppGuardConfigurationKeys.actionButtonLabel.rawValue: "my_action_label_key",
+                                      AppGuardConfigurationKeys.changelogContent.rawValue: "my_changelog_content_key",
+                                      AppGuardConfigurationKeys.title.rawValue: "my_title_key",
+                                      AppGuardConfigurationKeys.imageUrl.rawValue: "my_imageurl_key",
+                                      AppGuardConfigurationKeys.versionCode.rawValue: "my_versionCode_key"]
 
-AppGuardConfigurationKeysBinder.bindConfigurationKeys { keys in
-	keys[GuardConfigurationKeys.title.rawValue] = "myKey_title_key"
-}
+AppGuardConfigurationKeysBinder.bindConfigurationKeys(binding)
 
 ```
 
-### Use Firebase Remote Config
+## Customization
+
+### View controller customization
+
+You can simply override the `.xib` name of default controllers:
+
+- `AppGuardChangelogViewController`
+- `AppGuardUpdateViewController`
+
+For instance, create a `AppGuardChangelogViewController.xib` with the custom file's owner set to the StarsKit module. IBOutlets are optionnals so you decide what to override or not. 
+
+Don't forget the IBCction links!
+
+<p align="center"><img width=95% border=1 src="./img/custom_xib_class.png"></p>
+
+### Strings customization (Coming Soon)
+
+You can use the configurations strings or the Localizable ones, which you can override to in your app bundle.
+
+
+## Use Firebase Remote Config
 
 <p><img width=20% src="./img/firebase_config.png"/></p>
 
 If your app already use Firebase, why not use the Firebase Remote Config feature?
 AppGuard will be able to convert your associated Firebase remote configuration object to a readable data dictionnary for itself 👌.
+
+### Installation
+
+Add the Firebase Podspec
+
+```ruby
+pod 'AppGuard/FirebaseRemoteConfig'
+```
 
 ``` swift
 
@@ -98,32 +204,6 @@ remoteConfig.fetch(withExpirationDuration: 1.second) { (status, _) in
 }
 
 ```
-
-## Customization
-
-### View controller customization
-
-You directly have access to the `AppGuardUpdateViewController` and `AppGuardChangelogViewController` to sublcass them and use your own ones by return them in the `AppGuardDataSource`.
-
-``` swift
-extension MyFile: AppGuardDataSource {
-
-	func guardUpdateCustomController() -> AppGuardUpdateViewController? {
-		return MyCustomUpdateViewController()
-	}
-	
-	func guardChangelogCustomController() -> AppGuardChangelogViewController? {
-		return MyCustomUpdateViewController()
-	}
-
-}
-```
-
-You can also only override the `.xib` of default controllers.
-
-### Strings customization
-
-You can use the configurations strings or the Localizable ones, which you can override to in your app bundle.
 
 ## Contributors
 

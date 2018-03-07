@@ -1,12 +1,12 @@
 {
   "deeplink": "dfgdfg",
   "dialogType": 3,
-  "content": "Votre version de l'application n'est plus valable, nous vous invitions à mettre à jour l'application",
-  "actionButtonLabel": "Ok !",
-  "changelogContent": "- Nouvelle feature 1\n- Nouvelle feature 2\n- Nouvelle feature 3\n- Nouvelle feature 4\n- Nouvelle feature 5\n- Nouvelle feature 6\n- Nouvelle feature 7\n- Nouvelle feature 8",
-  "title": "Nouvelles fonctionnalités",
+  "content": "Your version of the application is no longer valid, we invite you to update the application",
+  "actionButtonLabel": "Ok",
+  "changelogContent": "- New feature 1 \n- New feature 2 \n- New feature 3 \n- New feature 4 \n- New feature 5 \n- New feature 6 \n- New feature 7 \n- New feature 8",
+  "title": "What's new?",
   "imageURL": "Default image URL",
-  "laterButtonLabel": "Plus tard",
+  "laterButtonLabel": "Later",
   "maxDaysBetweenDisplay": 3,
   "versionCode": 22
 }

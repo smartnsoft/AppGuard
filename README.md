@@ -226,6 +226,14 @@ Customizable properties are:
 - `image: UIImage?`
 - `jellyCustomTransition: JellyPresentation`
 
+### Transitions & display (Jelly)
+
+AppGuard uses Jelly fro customizable transitions. You can specify your own via the `jellyCustomTransition` property in the `AppGuardGraphicContext`.
+
+<p align="center"><img width=48% src="./img/presentation_black.png"> <img width=48% src="./img/presentation_bottom.png"></p>
+
+Go to [Jelly repo](https://github.com/SebastianBoldt/Jelly) for more information.
+
 
 ### Strings customization (Coming Soon)
 

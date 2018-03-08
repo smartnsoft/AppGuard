@@ -44,7 +44,7 @@ enum TransitionType: Int {
         var jellyShift = JellyShiftInPresentation()
         jellyShift.direction = .bottom
         jellyShift.backgroundStyle = .blur(effectStyle: .light)
-        jellyShift.size = .custom(value: 600)
+        jellyShift.size = .custom(value: 500)
         return jellyShift
       }()
     }

@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
 [![Platform](https://img.shields.io/cocoapods/p/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
 
+<img width=100% src="./img/AppGuard_banner.png">
+
 AppGuard is a guard for your iOS app, to check / force users to update your app or show what changed.
 
 <p align="center"><img width=32% src="./img/appguard_update_mandatory.png"> <img width=32% src="./img/appguard_update.png"> <img width=32% src="./img/appguard_changelog.png"></p>

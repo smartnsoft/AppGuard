@@ -59,6 +59,10 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "title_image"))
+    self.navigationItem.titleView = imageView
+    
     TransitionType.default.configure()
     self.prepareAppGuard()
     

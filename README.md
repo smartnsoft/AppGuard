@@ -55,8 +55,10 @@ By a mecanism of revival displays, blocked or dimissable pop-up, the user will /
 // Simply use the prepare method for default configuration properties
 AppGuard.default.prepare()
 
-// Configure the dataSource (and optionnaly the uiDelegate)
+// Configure the dataSource
 AppGuard.default.dataSource = self
+
+// And optionnaly the uiDelegate
 AppGuard.default.uiDelegate = self
 
 ```
@@ -132,7 +134,11 @@ AppGuard use a simple Dictionnary data to update its configuration.
 let configurationData // a [String: Any?] instance from JSON file or static dictionnary or anything else
 AppGuard.default.updateConfig(from: configurationData)
 
-AppGuard.default.checkUpdateStatus()
+// Ask the guard 💂‍♀️ if we can pass 
+AppGuard.default.displayUpdateStatus()
+
+// You can force it too 💂‍♀️🤷‍♂️
+AppGuard.default.displayUpdateStatus(forced: true)
 
 ```
 
@@ -246,7 +252,7 @@ pod 'AppGuard/FirebaseRemoteConfig'
 
 let remoteConfig = RemoteConfig.remoteConfig()
 remoteConfig.fetch(withExpirationDuration: 1.second) { (status, _) in
-    
+	remoteConfig.activateFetched()
 	AppGuard.default.updateConfig(from: remoteConfig)
 	AppGuard.default.checkUpdateStatus()
 }

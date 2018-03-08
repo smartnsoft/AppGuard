@@ -1,28 +1,26 @@
 PODS:
-  - AppGuard (0.1.0):
-    - AppGuard/FirebaseRemoteConfig (= 0.1.0)
-    - Extra/UIKit (~> 1.1)
+  - AppGuard (0.1.0-beta):
+    - AppGuard/FirebaseRemoteConfig (= 0.1.0-beta)
     - Jelly (~> 1.2)
-  - AppGuard/FirebaseRemoteConfig (0.1.0):
-    - Extra/UIKit (~> 1.1)
+  - AppGuard/FirebaseRemoteConfig (0.1.0-beta):
     - Firebase/RemoteConfig (~> 4.9)
     - Jelly (~> 1.2)
   - Extra/UIKit (1.1.1)
-  - Firebase/Core (4.9.0):
-    - FirebaseAnalytics (= 4.0.9)
-    - FirebaseCore (= 4.0.15)
-  - Firebase/RemoteConfig (4.9.0):
+  - Firebase/Core (4.10.0):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.16)
+  - Firebase/RemoteConfig (4.10.0):
     - Firebase/Core
     - FirebaseRemoteConfig (= 2.1.2)
   - FirebaseABTesting (1.0.0):
     - FirebaseCore (~> 4.0)
     - Protobuf (~> 3.1)
-  - FirebaseAnalytics (4.0.9):
+  - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseCore (4.0.15):
+  - FirebaseCore (4.0.16):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (2.0.9):
     - FirebaseCore (~> 4.0)
@@ -51,6 +49,7 @@ PODS:
 DEPENDENCIES:
   - AppGuard (from `../`)
   - AppGuard/FirebaseRemoteConfig (from `../`)
+  - Extra/UIKit
   - Kingfisher
   - lottie-ios
   - SwiftDate (~> 4.5.1)
@@ -61,12 +60,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AppGuard: b667a7a536e312f39d35e26f8241bd66aa98d7c0
+  AppGuard: ced3bca0b917955c21e8923c6ff801d44fdb12a3
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
-  Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
+  Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
-  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
-  FirebaseCore: 3bd047463058fa6b5d312c97502c52e45401cdfb
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseCore: eb9e1a56733ff1094ecf3e28af9069c344b25239
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   FirebaseRemoteConfig: df64ce784a45e9b9d4988030a59da6baede8bdb0
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
@@ -78,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 0d7c28d60444d3c3c60d359c6df5ff7b7d328b7e
+PODFILE CHECKSUM: 447612fe8a372dd75878fbfac84837f88fc04cbf
 
 COCOAPODS: 1.4.0

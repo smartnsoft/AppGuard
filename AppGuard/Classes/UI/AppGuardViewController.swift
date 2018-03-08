@@ -40,7 +40,7 @@ public class AppGuardViewController: UIViewController {
                                   for: .normal)
     self.ibActionButton?.setTitleColor(AppGuard.default.graphicContext.actionButtonTitleColor,
                                        for: .normal)
-    self.ibActionButton?.setBackgroundImage(AppGuard.default.graphicContext.actionButtonBackgroundColor?.ex.toImage(),
+    self.ibActionButton?.setBackgroundImage(AppGuard.default.graphicContext.actionButtonBackgroundColor?.toImage(),
                                             for: .normal)
     if AppGuard.default.graphicContext.roundedButton {
       self.ibActionButton?.layer.masksToBounds = true

@@ -8,6 +8,7 @@ abstract_target 'AppGuardAbstract' do
   pod 'lottie-ios'
   pod 'SwiftLint'
   pod 'Kingfisher'
+  pod 'Extra/UIKit'
   
   target 'AppGuard_Example' do
   end

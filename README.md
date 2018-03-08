@@ -34,9 +34,8 @@ pod 'AppGuard'
 
 Today we have third parties dependencies, but the purpose is to avoid them the most.
 
-We also wan to have a quick available library and significant customization, we use 3 dependencies:
+We also wan to have a quick available library and significant customization, we use one dependency:
 
-- [Extra/UIKit](https://github.com/smartnsoft/Extra): our library to simplify UIKit operation code
 - [Jelly](https://github.com/SebastianBoldt/Jelly): a simple UI component to simplify the rating transition display
 
 ## Description

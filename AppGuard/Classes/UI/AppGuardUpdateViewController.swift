@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import UIKit
-import Extra
 
 public class AppGuardUpdateViewController: AppGuardViewController, AppGuardable {
   
@@ -57,7 +56,7 @@ public class AppGuardUpdateViewController: AppGuardViewController, AppGuardable 
                                  for: .normal)
     self.ibLaterButton?.setTitleColor(AppGuard.default.graphicContext.laterButtonTitleColor,
                                       for: .normal)
-    self.ibLaterButton?.setBackgroundImage(AppGuard.default.graphicContext.laterButtonBackgroundColor?.ex.toImage(),
+    self.ibLaterButton?.setBackgroundImage(AppGuard.default.graphicContext.laterButtonBackgroundColor?.toImage(),
                                             for: .normal)
     
     self.ibLaterButton?.isHidden = (self.coordinator?.contextType == .mandatoryUpdate)

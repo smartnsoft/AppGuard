@@ -1,4 +1,5 @@
 {
+  "disabled" : false,
   "deeplink": "dfgdfg",
   "dialogType": 2,
   "content": "Your version of the application is no longer valid, we invite you to update the application",

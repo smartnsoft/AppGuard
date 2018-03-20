@@ -1,4 +1,5 @@
 {
+  "disabled" : false,
   "deeplink": "http://www.google.fr",
   "dialogType": 1,
   "content": "Default content text",

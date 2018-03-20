@@ -62,6 +62,7 @@ class AppGuard_ExampleTests: XCTestCase {
   
   func testDefaultKeyBindings() {
     XCTAssertNotNil(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsCustomKey), "")
+    XCTAssertNotNil(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.disabled.userDefaultsCustomKey), "")
     XCTAssertNotNil(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.dialogType.userDefaultsCustomKey), "")
     XCTAssertNotNil(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.content.userDefaultsCustomKey), "")
     XCTAssertNotNil(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.actionButtonLabel.userDefaultsCustomKey), "")
@@ -82,11 +83,14 @@ class AppGuard_ExampleTests: XCTestCase {
                            AppGuardConfigurationKeys.title.rawValue)
     XCTAssertEqualOptional(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.imageUrl.userDefaultsCustomKey) as? String,
                            AppGuardConfigurationKeys.imageUrl.rawValue)
+    XCTAssertEqualOptional(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.disabled.userDefaultsCustomKey) as? String,
+                           AppGuardConfigurationKeys.disabled.rawValue)
   }
   
   func testCustomKeyBindings() {
     
-    let binding: [String: String?] = [AppGuardConfigurationKeys.deeplink.rawValue: "my_deeplink_key",
+    let binding: [String: String?] = [AppGuardConfigurationKeys.disabled.rawValue: "my_disabled_key",
+                                      AppGuardConfigurationKeys.deeplink.rawValue: "my_deeplink_key",
                                       AppGuardConfigurationKeys.dialogType.rawValue: "my_dialog_type_key",
                                       AppGuardConfigurationKeys.content.rawValue: "my_content_key",
                                       AppGuardConfigurationKeys.actionButtonLabel.rawValue: "my_action_label_key",
@@ -118,11 +122,14 @@ class AppGuard_ExampleTests: XCTestCase {
                            "my_title_key")
     XCTAssertEqualOptional(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.imageUrl.userDefaultsCustomKey) as? String,
                            "my_imageurl_key")
+    XCTAssertEqualOptional(UserDefaults.standard.value(forKey: AppGuardConfigurationKeys.disabled.userDefaultsCustomKey) as? String,
+                           "my_disabled_key")
   }
   
   func testDefaultConfiguration() {
     self.switchToConfig(named: "configuration")
     
+    XCTAssertEqual(AppGuard.default.configuration.disabled, false)
     XCTAssertEqualOptional(AppGuard.default.configuration.deeplink, "http://www.google.fr")
     XCTAssertEqualOptional(AppGuard.default.configuration.dialogTypeValue.rawValue, 2)
     XCTAssertEqualOptional(AppGuard.default.configuration.content, "Default content text")
@@ -132,6 +139,21 @@ class AppGuard_ExampleTests: XCTestCase {
     XCTAssertEqualOptional(AppGuard.default.configuration.imageUrl, "Default image URL")
     
   }
+  
+  func testDefaultConfigurationDisabled() {
+    self.switchToConfig(named: "configuration_mandatoryTo3_disabled")
+    
+    XCTAssertEqual(AppGuard.default.configuration.disabled, true)
+    XCTAssertFalse(AppGuard.default.displayUpdateStatus(), "The update screen has not to be displayed if the configuration is disabled")
+  }
+  
+  func testDefaultConfigurationEnabled() {
+    self.switchToConfig(named: "configuration_mandatoryTo3")
+    
+    XCTAssertEqual(AppGuard.default.configuration.disabled, false)
+    XCTAssertTrue(AppGuard.default.displayUpdateStatus(), "The update screen has to be displayed if the configuration is not disabled")
+  }
+    
   
   func testCustomConfiguration() {
     

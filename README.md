@@ -75,7 +75,7 @@ By a mecanism of revival displays, blocked or dimissable pop-up, the user will /
 
 You can specify metrics to trigger the default display behavior or use your own one.
 
-- [ ] Disable/enable the component
+- [X] Disable/enable the component
 - [X] Version code (bundleVersion)
 - [X] Static configuration strings
 - [X] Maximum of days between display

@@ -25,6 +25,16 @@ import Foundation
 
 public final class AppGuardConfiguration {
   
+  public internal(set) var disabled: Bool {
+    get {
+      return UserDefaults.standard.bool(forKey: AppGuardConfigurationKeys.disabled.userDefaultsKey)
+    }
+    
+    set {
+      UserDefaults.standard.set(newValue, forKey: AppGuardConfigurationKeys.disabled.userDefaultsKey)
+    }
+  }
+  
   public internal(set) var deeplink: String? {
     get {
       return UserDefaults.standard.string(forKey: AppGuardConfigurationKeys.deeplink.userDefaultsKey)
@@ -132,14 +142,21 @@ public final class AppGuardConfiguration {
   func update(with data: [String: Any?]) {
     AppGuardConfigurationKeys.allStringKeys.forEach { (stringKey) in
       if let parseKey = UserDefaults.standard.string(forKey: stringKey.userDefaultsCustomKey) {
-        UserDefaults.standard.set(data[parseKey] as? String, forKey: stringKey.userDefaultsKey)
+        UserDefaults.standard.set(data[parseKey] as? String,
+                                  forKey: stringKey.userDefaultsKey)
       }
     }
     
     AppGuardConfigurationKeys.allIntKeys.forEach { (integerKey) in
       if let parseKey = UserDefaults.standard.string(forKey: integerKey.userDefaultsCustomKey) {
-        UserDefaults.standard.set(data[parseKey] as? Int, forKey: integerKey.userDefaultsKey)
+        UserDefaults.standard.set(data[parseKey] as? Int,
+                                  forKey: integerKey.userDefaultsKey)
       }
+    }
+    
+    if let disabledKey = UserDefaults.standard.string(forKey: AppGuardConfigurationKeys.disabled.userDefaultsCustomKey) {
+      UserDefaults.standard.set(data[disabledKey] as? Bool ?? false,
+                                forKey: AppGuardConfigurationKeys.disabled.userDefaultsKey)
     }
   }
   

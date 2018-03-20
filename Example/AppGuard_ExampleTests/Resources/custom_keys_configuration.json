@@ -1,4 +1,5 @@
 {
+  "my_disabled_key" : false,
   "my_deeplink_key": "http://www.google.custom",
   "my_dialog_type_key": 1,
   "my_content_key": "Custom content text",

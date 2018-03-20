@@ -21,6 +21,7 @@
 		4420C5C8206161CA00CB8C0F /* UIViewController+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420C5BD206161CA00CB8C0F /* UIViewController+TopMost.swift */; };
 		4420C5C9206161CA00CB8C0F /* StubsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420C5BE206161CA00CB8C0F /* StubsReader.swift */; };
 		4420C5CA206161CA00CB8C0F /* XCTAssert+Optionnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420C5BF206161CA00CB8C0F /* XCTAssert+Optionnal.swift */; };
+		4420C5CC206169FD00CB8C0F /* configuration_mandatoryTo3_disabled.json in Resources */ = {isa = PBXBuildFile; fileRef = 4420C5CB206169FD00CB8C0F /* configuration_mandatoryTo3_disabled.json */; };
 		449C24512048647D001176DD /* configuration1.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24502048647D001176DD /* configuration1.json */; };
 		449C24562049C71B001176DD /* configuration3.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24542049C71B001176DD /* configuration3.json */; };
 		449C24572049C71B001176DD /* configuration2.json in Resources */ = {isa = PBXBuildFile; fileRef = 449C24552049C71B001176DD /* configuration2.json */; };
@@ -78,6 +79,7 @@
 		4420C5BD206161CA00CB8C0F /* UIViewController+TopMost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopMost.swift"; sourceTree = "<group>"; };
 		4420C5BE206161CA00CB8C0F /* StubsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsReader.swift; sourceTree = "<group>"; };
 		4420C5BF206161CA00CB8C0F /* XCTAssert+Optionnal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTAssert+Optionnal.swift"; sourceTree = "<group>"; };
+		4420C5CB206169FD00CB8C0F /* configuration_mandatoryTo3_disabled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration_mandatoryTo3_disabled.json; sourceTree = "<group>"; };
 		449C24502048647D001176DD /* configuration1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration1.json; sourceTree = "<group>"; };
 		449C24542049C71B001176DD /* configuration3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration3.json; sourceTree = "<group>"; };
 		449C24552049C71B001176DD /* configuration2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration2.json; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		4420C5B4206161CA00CB8C0F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4420C5CB206169FD00CB8C0F /* configuration_mandatoryTo3_disabled.json */,
 				4420C5B5206161CA00CB8C0F /* configuration_recommandedTo3.json */,
 				4420C5B6206161CA00CB8C0F /* configuration_recommandedTo2.json */,
 				4420C5B7206161CA00CB8C0F /* configuration_updateChangelogFor2.json */,
@@ -380,6 +383,7 @@
 			files = (
 				4420C5C1206161CA00CB8C0F /* configuration_recommandedTo2.json in Resources */,
 				4420C5C0206161CA00CB8C0F /* configuration_recommandedTo3.json in Resources */,
+				4420C5CC206169FD00CB8C0F /* configuration_mandatoryTo3_disabled.json in Resources */,
 				4420C5C3206161CA00CB8C0F /* configuration_updateChangelogFor3.json in Resources */,
 				4420C5C7206161CA00CB8C0F /* custom_keys_configuration.json in Resources */,
 				4420C5C2206161CA00CB8C0F /* configuration_updateChangelogFor2.json in Resources */,

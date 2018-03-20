@@ -33,6 +33,7 @@ public enum AppGuardConfigurationKeys: String {
   case laterButtonLabel
   case maxDaysBetweenDisplay
   case versionCode
+  case disabled
   
   static let allKeys: [AppGuardConfigurationKeys] = [.deeplink,
                                                      .dialogType,
@@ -43,7 +44,8 @@ public enum AppGuardConfigurationKeys: String {
                                                      .imageUrl,
                                                      .versionCode,
                                                      .maxDaysBetweenDisplay,
-                                                     .laterButtonLabel]
+                                                     .laterButtonLabel,
+                                                     .disabled]
   
   static let allIntKeys: [AppGuardConfigurationKeys] = [.dialogType,
                                                         .maxDaysBetweenDisplay,

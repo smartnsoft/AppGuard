@@ -79,6 +79,10 @@ public final class AppGuard {
   @discardableResult
   public func displayUpdateStatus(forced: Bool = false) -> Bool {
     
+    guard !self.configuration.disabled else {
+      return false
+    }
+    
     let result = AppGuardChecker.needDisplayScreen()
     
     if forced || (result.willDisplay && result.context != .none) {

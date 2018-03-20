@@ -1,9 +1,31 @@
-import XCTest
-import AppGuard
-import SwiftDate
+// The MIT License (MIT)
+//
+// Copyright (c) 2018 Smart&Soft
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
-class Tests: XCTestCase {
-  
+import XCTest
+import SwiftDate
+import AppGuard
+
+class AppGuard_ExampleTests: XCTestCase {
+    
   override func setUp() {
     super.setUp()
     AppGuardConfigurationKeysBinder.resetBinding()
@@ -115,7 +137,7 @@ class Tests: XCTestCase {
     
     self.testCustomKeyBindings()
     self.switchToConfig(named: "custom_keys_configuration")
-
+    
     XCTAssertEqualOptional(AppGuard.default.configuration.deeplink, "http://www.google.custom")
     XCTAssertEqualOptional(AppGuard.default.configuration.dialogTypeValue.rawValue, 1)
     XCTAssertEqualOptional(AppGuard.default.configuration.content, "Custom content text")
@@ -159,7 +181,7 @@ class Tests: XCTestCase {
     self.switchToConfig(named: "configuration_mandatoryTo3")
     
     XCTAssertTrue(AppGuard.default.displayUpdateStatus(), "Mandatory update has to be displayed first")
-
+    
     XCTAssertNotNil(AppGuard.default.context.lastDisplayUpdate, "Last display date has to be saved")
     if let date = AppGuard.default.context.lastDisplayUpdate {
       let newDate = date - 3.days
@@ -199,7 +221,7 @@ class Tests: XCTestCase {
   
   /// A recommanded update has to be re-displayed after the 3 days re-ask limit
   func testRecommandedUpdateAfterDays() {
-
+    
     self.testRecommandedUpdate()
     
     if let date = AppGuard.default.context.lastDisplayUpdate {
@@ -237,5 +259,5 @@ class Tests: XCTestCase {
     self.switchToConfig(named: "configuration_updateChangelogFor3")
     XCTAssertFalse(AppGuard.default.displayUpdateStatus(), "The changelog screen has not to be re-displayed if last changelogVersion is correct")
   }
-  
+    
 }

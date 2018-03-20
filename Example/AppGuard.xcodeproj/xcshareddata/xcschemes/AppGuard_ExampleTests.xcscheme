@@ -17,9 +17,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "AppGuard_Tests.xctest"
-               BlueprintName = "AppGuard_Tests"
+               BlueprintIdentifier = "4420C5A92061611100CB8C0F"
+               BuildableName = "AppGuard_ExampleTests.xctest"
+               BlueprintName = "AppGuard_ExampleTests"
                ReferencedContainer = "container:AppGuard.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -13,8 +13,11 @@ abstract_target 'AppGuardAbstract' do
   target 'AppGuard_Example' do
   end
   
-  target 'AppGuard_Tests' do
+  target 'AppGuard_ExampleTests' do
     pod 'SwiftDate', '~> 4.5.1'
+  end
+  
+  target 'AppGuard_ExampleUITests' do
   end
   
 end

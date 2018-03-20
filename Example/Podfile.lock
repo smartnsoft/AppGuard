@@ -1,8 +1,8 @@
 PODS:
-  - AppGuard (0.1.0-beta):
-    - AppGuard/FirebaseRemoteConfig (= 0.1.0-beta)
+  - AppGuard (0.1.0):
+    - AppGuard/FirebaseRemoteConfig (= 0.1.0)
     - Jelly (~> 1.2)
-  - AppGuard/FirebaseRemoteConfig (0.1.0-beta):
+  - AppGuard/FirebaseRemoteConfig (0.1.0):
     - Firebase/RemoteConfig (~> 4.9)
     - Jelly (~> 1.2)
   - Extra/UIKit (1.1.1)
@@ -60,7 +60,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AppGuard: ced3bca0b917955c21e8923c6ff801d44fdb12a3
+  AppGuard: a2bf784b6571ea97cb4123acfe523c0ad5c82791
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
   Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 447612fe8a372dd75878fbfac84837f88fc04cbf
+PODFILE CHECKSUM: 8b97071ca2fa5feaad9e1e76fb11395851ca2fc4
 
 COCOAPODS: 1.4.0

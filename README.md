@@ -1,13 +1,13 @@
 # 💂‍♀️ AppGuard
 
 [![CI Status](http://img.shields.io/travis/smartnsoft/AppGuard.svg?style=flat)](https://travis-ci.org/smartnsoft/AppGuard)
-[![Version](https://img.shields.io/cocoapods/v/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
-[![License](https://img.shields.io/cocoapods/l/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
-[![Platform](https://img.shields.io/cocoapods/p/AppGuard.svg?style=flat)](http://cocoapods.org/pods/AppGuard)
+[![Version](https://img.shields.io/cocoapods/v/AppGuard.svg?style=flat)](https://img.shields.io/cocoapods/v/AppGuard.svg?style=flat)
+[![License](https://img.shields.io/cocoapods/l/AppGuard.svg?style=flat)](https://img.shields.io/cocoapods/l/AppGuard.svg?style=flat)
+[![Platform](https://img.shields.io/cocoapods/p/AppGuard.svg?style=flat)](https://img.shields.io/cocoapods/p/AppGuard.svg?style=flat)
 
 <img width=100% src="./img/AppGuard_banner.png">
 
-AppGuard is a guard for your iOS app, to check / force users to update your app or show what changed.
+AppGuard is a guard 💂‍♀️ for your iOS app, to check / force users to update your app or show what changed.
 
 <p align="center"><img width=32% src="./img/appguard_update_mandatory.png"> <img width=32% src="./img/appguard_update.png"> <img width=32% src="./img/appguard_changelog.png"></p>
 
@@ -38,7 +38,7 @@ We also wan to have a quick available library and significant customization, we 
 
 - [Jelly](https://github.com/SebastianBoldt/Jelly): a simple UI component to simplify the rating transition display
 
-## Description
+## Description & features
 
 AppGuard offers three default behaviors for your app to:
 
@@ -47,6 +47,41 @@ AppGuard offers three default behaviors for your app to:
 3. Show to the user **what's new** in the last version (**update informations**).
 
 By a mecanism of revival displays, blocked or dimissable pop-up, the user will / may have to update your app according to the informations and actions displayed.
+
+### Features list
+
+- [X] Static configuration strings
+- [X] Cocoapods integration
+- [X] Default & configurable step transitions
+- [X] Default display algorithm behavior
+- [X] Customizable fonts, text & tint colors
+- [X] Screen actions callbacks
+- [X] Configurable with dictionary/data or remote URL: everything you want!
+- [X] Overridable layouts
+- [X] Lifecycle display events ([will/did]appear/disappear)
+- [X] Configurable key for parsing
+- [X] Firebase extension to bind Remote Config to StarsKit data
+- [ ] Additional condition checking on the default check
+- [ ] Carthage integration
+- [ ] Use localizable or configuration strings
+- [ ] Default localizable strings : 
+- - [ ] EN
+- - [ ] FR
+- [ ] Overridable localizable strings
+- [ ] Customizable display algorithm behavior
+
+
+### Configurable metrics for display
+
+You can specify metrics to trigger the default display behavior or use your own one.
+
+- [ ] Disable/enable the component
+- [X] Version code (bundleVersion)
+- [X] Static configuration strings
+- [X] Maximum of days between display
+- [X] Mandatory type: screen properties
+- [X] Recommanded type: Feedback screen properties
+- [X] Changelog type: Store review screen properties
 
 ## Default usage
 
@@ -191,7 +226,7 @@ You can simply override the `.xib` name of default controllers:
 - `AppGuardChangelogViewController`
 - `AppGuardUpdateViewController`
 
-For instance, create a `AppGuardChangelogViewController.xib` with the custom file's owner set to the StarsKit module. IBOutlets are optionnals so you decide what to override or not. 
+For instance, create a `AppGuardChangelogViewController.xib` with the custom file's owner set to the StarsKit module. IBOutlets are optionnals so you decide what to override or not.
 
 Don't forget the IBAction links!
 
@@ -243,7 +278,7 @@ You can use the configurations strings or the Localizable ones, which you can ov
 
 <p><img width=20% src="./img/firebase_config.png"/></p>
 
-If your app already use Firebase, why not use the Firebase Remote Config feature?
+If your app already use Firebase, why not use the **Firebase Remote Config** feature?
 AppGuard will be able to convert your associated Firebase remote configuration object to a readable data dictionnary for itself 👌.
 
 ### Installation
@@ -270,9 +305,7 @@ remoteConfig.fetch(withExpirationDuration: 1.second) { (status, _) in
 
 ## Contributors
 
-Made in 🇫🇷 by the [Smart&Soft](https://smartnsoft.com/) iOS Team
-
-- Jean-Charles Sorin - Smart&Soft
+Made in 🇫🇷 by the [Smart&Soft](https://smartnsoft.com/) iOS Team.
 
 ## License
 

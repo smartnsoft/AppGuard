@@ -10,7 +10,10 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'AppGuard/Classes/**/*'
+  s.source_files = [
+    'AppGuard/Classes/Logic/*',
+    'AppGuard/Classes/UI/*'
+    ]
 
   s.resources = [
     'AppGuard/Assets/*.lproj/*.strings',

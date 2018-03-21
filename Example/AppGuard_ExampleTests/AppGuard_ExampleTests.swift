@@ -22,7 +22,7 @@
 
 import XCTest
 import SwiftDate
-import AppGuard
+@testable import AppGuard
 
 class AppGuard_ExampleTests: XCTestCase {
     

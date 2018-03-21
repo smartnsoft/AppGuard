@@ -3,7 +3,7 @@ PODS:
     - AppGuard/FirebaseRemoteConfig (= 0.1.0)
     - Jelly (~> 1.2)
   - AppGuard/FirebaseRemoteConfig (0.1.0):
-    - Firebase/RemoteConfig (~> 4.9)
+    - Firebase/RemoteConfig (~> 4.10)
     - Jelly (~> 1.2)
   - Extra/UIKit (1.1.1)
   - Firebase/Core (4.10.0):
@@ -60,7 +60,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AppGuard: 22375697202ee9578ede3f49697f6a9009342bae
+  AppGuard: ee892af388d91c208d3ee79c018ae3210b280e8a
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
   Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9

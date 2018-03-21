@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'FirebaseRemoteConfig' do |sp|
     sp.source_files = 'AppGuard/Classes/Firebase/**/*.{swift}'
-    sp.dependency 'Firebase/RemoteConfig', '~> 4.9'
+    sp.dependency 'Firebase/RemoteConfig', '~> 4.10'
   end
 end

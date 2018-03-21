@@ -10,10 +10,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = [
-    'AppGuard/Classes/Logic/*',
-    'AppGuard/Classes/UI/*'
-    ]
+  s.default_subspec = 'Core'
 
 #s.resources = [
 #    'AppGuard/Assets/*.lproj/*.strings',
@@ -21,10 +18,18 @@ Pod::Spec.new do |s|
 #    ]
 
   s.frameworks = 'UIKit'
-  s.dependency 'Jelly', '~> 1.2'
-
-  s.subspec 'FirebaseRemoteConfig' do |sp|
-    sp.source_files = 'AppGuard/Classes/Firebase/**/*.{swift}'
-    sp.dependency 'Firebase/RemoteConfig', '~> 4.10'
+  
+  s.subspec 'Core' do |core|
+    core.dependency 'Jelly', '~> 1.2'
+    core.source_files = [
+    'AppGuard/Classes/Logic/*',
+    'AppGuard/Classes/UI/*'
+    ]
+  end
+  
+  s.subspec 'FirebaseRemoteConfig' do |firebase|
+    firebase.dependency 'AppGuard/Core'
+    firebase.dependency 'Firebase/RemoteConfig', '~> 4.10'
+    firebase.source_files = 'AppGuard/Classes/Firebase/**/*.{swift}'
   end
 end

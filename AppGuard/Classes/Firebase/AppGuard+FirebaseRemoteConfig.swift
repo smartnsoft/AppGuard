@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 import Foundation
-import FirebaseRemoteConfig.FIRRemoteConfig
+import FirebaseRemoteConfig
 
 public extension AppGuard {
   

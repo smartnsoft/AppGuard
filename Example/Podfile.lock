@@ -60,7 +60,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AppGuard: a2d8c3685fee6e0244941af45a244c8a512a4e57
+  AppGuard: 5876c536be76fa3c034bc6abfb056374a9c21dd5
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
   Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9

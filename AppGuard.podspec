@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
     'AppGuard/Classes/UI/*'
     ]
 
-  s.resources = [
-    'AppGuard/Assets/*.lproj/*.strings',
-    'AppGuard/Assets/AppGuardImages.xcassets'
-    ]
+#s.resources = [
+#    'AppGuard/Assets/*.lproj/*.strings',
+#    'AppGuard/Assets/AppGuardImages.xcassets'
+#    ]
 
   s.frameworks = 'UIKit'
   s.dependency 'Jelly', '~> 1.2'

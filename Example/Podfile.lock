@@ -6,10 +6,10 @@ PODS:
     - Firebase/RemoteConfig (~> 4.10)
     - Jelly (~> 1.2)
   - Extra/UIKit (1.1.1)
-  - Firebase/Core (4.10.0):
+  - Firebase/Core (4.10.1):
     - FirebaseAnalytics (= 4.1.0)
-    - FirebaseCore (= 4.0.16)
-  - Firebase/RemoteConfig (4.10.0):
+    - FirebaseCore (= 4.0.17)
+  - Firebase/RemoteConfig (4.10.1):
     - Firebase/Core
     - FirebaseRemoteConfig (= 2.1.2)
   - FirebaseABTesting (1.0.0):
@@ -20,7 +20,7 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseCore (4.0.16):
+  - FirebaseCore (4.0.17):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (2.0.9):
     - FirebaseCore (~> 4.0)
@@ -62,10 +62,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppGuard: ee892af388d91c208d3ee79c018ae3210b280e8a
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
-  Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
+  Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
-  FirebaseCore: eb9e1a56733ff1094ecf3e28af9069c344b25239
+  FirebaseCore: 872307b001bbefda1dfa0dbfffa50a6919023d4a
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   FirebaseRemoteConfig: df64ce784a45e9b9d4988030a59da6baede8bdb0
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20

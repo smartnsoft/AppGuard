@@ -114,7 +114,7 @@ extension ViewController: AppGuardDataSource {
     
   }
   
-  func presenterController() -> UIViewController? {
+  func guardPresenterController() -> UIViewController? {
     return self
   }
   

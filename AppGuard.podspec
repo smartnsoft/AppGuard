@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppGuard'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'AppGuard is a guard 💂‍♀️ for your iOS app, to check / force users to update your app or show what changed.'
   s.homepage         = 'https://github.com/smartnsoft/AppGuard'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'FirebaseRemoteConfig' do |firebase|
     firebase.dependency 'AppGuard/Core'
-    firebase.dependency 'Firebase/RemoteConfig', '~> 4.10.0'
+    firebase.dependency 'Firebase/RemoteConfig', '~> 4.10'
     firebase.source_files = 'AppGuard/Classes/Firebase/**/*.{swift}'
   end
 end

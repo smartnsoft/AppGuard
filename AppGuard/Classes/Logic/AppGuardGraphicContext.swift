@@ -27,6 +27,7 @@ final public class AppGuardGraphicContext {
   
   // The global corner radius to apply on the main displayed view
   public lazy var cornerRadius: CGFloat = 10
+  public var buttonCornerRadius: CGFloat?
   
   public var roundedButton = true
   
@@ -41,7 +42,7 @@ final public class AppGuardGraphicContext {
   public lazy var titleFont = UIFont.boldSystemFont(ofSize: 25)
   public lazy var titleColor = UIColor.darkGray
   
-  public lazy var contentFont = UIFont.systemFont(ofSize: 15, weight: .regular)
+  public lazy var contentFont = UIFont.systemFont(ofSize: 15)
   public lazy var contentColor = UIColor.darkGray
   
   public var image: UIImage?

@@ -32,7 +32,7 @@ public class AppGuardViewController: UIViewController {
     super.viewDidLoad()
     
     self.ibTitleLabel?.text = AppGuard.default.configuration.title
-    self.ibTitleLabel?.textColor = AppGuard.default.graphicContext.contentColor
+    self.ibTitleLabel?.textColor = AppGuard.default.graphicContext.titleColor
     self.ibTitleLabel?.font = AppGuard.default.graphicContext.titleFont
     
     self.ibActionButton?.titleLabel?.font = AppGuard.default.graphicContext.actionButtonFont
@@ -42,9 +42,9 @@ public class AppGuardViewController: UIViewController {
                                        for: .normal)
     self.ibActionButton?.setBackgroundImage(AppGuard.default.graphicContext.actionButtonBackgroundColor?.toImage(),
                                             for: .normal)
-    if AppGuard.default.graphicContext.roundedButton {
-      self.ibActionButton?.layer.masksToBounds = true
-      self.ibActionButton?.layer.cornerRadius = 22
+    if let actionButton = self.ibActionButton, AppGuard.default.graphicContext.roundedButton {
+      actionButton.layer.masksToBounds = true
+      actionButton.layer.cornerRadius = AppGuard.default.graphicContext.buttonCornerRadius ?? actionButton.frame.height / 2
     }
     
     AppGuard.default.dataSource?.configureImageView(self.ibImageView)

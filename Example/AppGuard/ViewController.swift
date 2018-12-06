@@ -90,6 +90,7 @@ class ViewController: UIViewController {
     AppGuard.default.dataSource = self
     AppGuard.default.uiDelegate = self
     AppGuard.default.graphicContext.actionButtonBackgroundColor = UIColor.ex.fromHexa("#17b8c5")
+    //AppGuard.default.graphicContext.buttonCornerRadius = 5
   }
   
   @IBAction func didChangedGuardType(_ sender: UISegmentedControl) {
@@ -179,7 +180,7 @@ extension ViewController: AppGuardDataSource {
   }
   
   
-  func presenterController() -> UIViewController? {
+  func guardPresenterController() -> UIViewController? {
     return self
   }
   

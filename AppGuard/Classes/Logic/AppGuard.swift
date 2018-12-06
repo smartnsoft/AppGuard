@@ -38,7 +38,7 @@ public protocol AppGuardUIDelegate: class {
 
 /// Configure your custom controllers to display instead of default ones
 public protocol AppGuardDataSource: class {
-  func presenterController() -> UIViewController?
+  func guardPresenterController() -> UIViewController?
   func configureImageView(_ imageView: UIImageView?)
 }
 
@@ -102,7 +102,7 @@ public final class AppGuard {
         if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
           self.presentComplete(for: result.context)
         }
-        self.dataSource?.presenterController()?.present(controller, animated: true, completion: {
+        self.dataSource?.guardPresenterController()?.present(controller, animated: true, completion: {
           self.presentComplete(for: result.context)
           self.uiDelegate?.guardControllerDidAppear(for: result.context)
         })

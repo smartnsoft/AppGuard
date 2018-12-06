@@ -27,9 +27,15 @@ final public class AppGuardGraphicContext {
   
   // The global corner radius to apply on the main displayed view
   public lazy var cornerRadius: CGFloat = 10
-  public var buttonCornerRadius: CGFloat?
-  
+
+  /// Whether the main button show have rounded edges.
+  /// You can customize the corner radius with the ````buttonCornerRadius```` property
   public var roundedButton = true
+
+  /// The corner radius to apply to the main button.
+  /// Ignored if ````roundedButton```` is ````false````.
+  /// If nil, the corner radius will be set so that the button is round.
+  public var buttonCornerRadius: CGFloat?
   
   public lazy var actionButtonBackgroundColor: UIColor? = UIColor.blue
   public lazy var actionButtonTitleColor = UIColor.white

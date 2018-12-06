@@ -241,6 +241,7 @@ The `AppGuardGraphicContext` can be set with your own values.
 ```
 AppGuard.default.graphicContext.actionButtonBackgroundColor = UIColor.ex.fromHexa("#17b8c5")
 AppGuard.default.graphicContext.jellyCustomTransition = myCustomJellyPresentation
+AppGuard.default.graphicContext.buttonCornerRadius = 5
 ```
 
 Customizable properties are:

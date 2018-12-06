@@ -14,8 +14,8 @@ AppGuard is a guard 💂‍♀️ for your iOS app, to check / force users to up
 ## Requirements
 
 - iOS 9.0+
-- Swift 4+
-- Xcode 9.2+
+- Swift 4.2+
+- Xcode 10.0+
 
 ## Example
 

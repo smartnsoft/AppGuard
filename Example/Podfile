@@ -7,8 +7,9 @@ abstract_target 'AppGuardAbstract' do
   pod 'AppGuard/FirebaseRemoteConfig', :path => '../'
   pod 'lottie-ios'
   pod 'SwiftLint'
-  pod 'Kingfisher'
-  pod 'Extra/UIKit'
+  pod 'Kingfisher', '~> 4.10.0'
+  pod 'Extra/UIKit', '~> 1.2.0'
+  pod 'Extra/CoreAnimation', '~> 1.2.0'
   
   target 'AppGuard_Example' do
   end

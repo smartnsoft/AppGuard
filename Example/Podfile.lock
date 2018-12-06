@@ -1,12 +1,13 @@
 PODS:
-  - AppGuard (0.1.0):
-    - AppGuard/Core (= 0.1.0)
-  - AppGuard/Core (0.1.0):
-    - Jelly (~> 1.2)
-  - AppGuard/FirebaseRemoteConfig (0.1.0):
+  - AppGuard (0.2.0):
+    - AppGuard/Core (= 0.2.0)
+  - AppGuard/Core (0.2.0):
+    - Jelly (~> 1.2.0)
+  - AppGuard/FirebaseRemoteConfig (0.2.0):
     - AppGuard/Core
-    - Firebase/RemoteConfig (~> 4.10)
-  - Extra/UIKit (1.1.1)
+    - Firebase/RemoteConfig (~> 4.10.0)
+  - Extra/CoreAnimation (1.2.0)
+  - Extra/UIKit (1.2.0)
   - Firebase/Core (4.10.1):
     - FirebaseAnalytics (= 4.1.0)
     - FirebaseCore (= 4.0.17)
@@ -19,10 +20,10 @@ PODS:
   - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseCore (4.0.17):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (2.0.9):
     - FirebaseCore (~> 4.0)
   - FirebaseRemoteConfig (2.1.2):
@@ -30,13 +31,13 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - Protobuf (~> 3.1)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - Jelly (1.2.4)
-  - Kingfisher (4.6.3)
+  - Jelly (1.2.5)
+  - Kingfisher (4.10.1)
   - lottie-ios (2.5.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -50,19 +51,38 @@ PODS:
 DEPENDENCIES:
   - AppGuard (from `../`)
   - AppGuard/FirebaseRemoteConfig (from `../`)
-  - Extra/UIKit
-  - Kingfisher
+  - Extra/CoreAnimation (~> 1.2.0)
+  - Extra/UIKit (~> 1.2.0)
+  - Kingfisher (~> 4.10.0)
   - lottie-ios
   - SwiftDate (~> 4.5.1)
   - SwiftLint
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Extra
+    - Firebase
+    - FirebaseABTesting
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseRemoteConfig
+    - GoogleToolboxForMac
+    - Jelly
+    - Kingfisher
+    - lottie-ios
+    - nanopb
+    - Protobuf
+    - SwiftDate
+    - SwiftLint
+
 EXTERNAL SOURCES:
   AppGuard:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  AppGuard: 3d2501b355e2f80ecefd982abcb20e25db630c6c
-  Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
+  AppGuard: 285adab28aee2bb99eeab1a054b03faa2a54fa98
+  Extra: 29591a8ffff56c0152b05b857b6d5e395d5bd520
   Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
@@ -70,14 +90,14 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   FirebaseRemoteConfig: df64ce784a45e9b9d4988030a59da6baede8bdb0
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  Jelly: 70e542dd201460211f0f20042bc2c2d31ae239a1
-  Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
+  Jelly: cc6b6a81ed3c476fe0126b10526ee9eb8c98bb45
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 8b97071ca2fa5feaad9e1e76fb11395851ca2fc4
+PODFILE CHECKSUM: 9339e7a1e17681f3dedac3dfa84298532b2e8b9d
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

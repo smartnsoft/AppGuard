@@ -115,7 +115,6 @@ class ViewController: UIViewController {
   
   
   @IBAction func didTapRetrieveUserConfigButton(_ sender: Any) {
-    
     let binding: [String: String?] = [AppGuardConfigurationKeys.deeplink.rawValue: "update_deeplink",
                                       AppGuardConfigurationKeys.dialogType.rawValue: "update_dialogType",
                                       AppGuardConfigurationKeys.content.rawValue: "update_content",
@@ -127,39 +126,34 @@ class ViewController: UIViewController {
     AppGuardConfigurationKeysBinder.bindConfigurationKeys(binding)
     
     let remoteConfig = RemoteConfig.remoteConfig()
-    remoteConfig.fetch(withExpirationDuration: 1) { (status, error) in
-      
-      switch status {
-      case .success, .throttled:
-        remoteConfig.activateFetched()
-        AppGuard.default.updateFrom(remoteConfig: remoteConfig)
-        
-        let message = """
-        title : \(AppGuard.default.configuration.title ?? "") \n
-        deeplink : \(AppGuard.default.configuration.deeplink ?? "") \n
-        dialogType : \(AppGuard.default.configuration.dialogType) \n
-        content : \(AppGuard.default.configuration.content ?? "") \n
-        actionButtonLabel : \(AppGuard.default.configuration.actionButtonLabel ?? "") \n
-        changelogContent : \(AppGuard.default.configuration.changelogContent ?? "") \n
-        title : \(AppGuard.default.configuration.title ?? "") \n
-        imageUrl : \(AppGuard.default.configuration.imageUrl ?? "") \n
-        versionCode : \(AppGuard.default.configuration.versionCode) \n
-        """
-        
-        let alertController = UIAlertController(title: "Configuration updated from Firebase 👌",
-                                                message: message,
-                                                preferredStyle: .alert)
-        let dismissItem = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(dismissItem)
-        self.present(alertController, animated: true, completion: nil)
-      case .failure:
-        print("Cannot retrieve Firebase remote config, check your SDK integration first")
-      default:
-        break
+    remoteConfig.fetchAndActivate() { status, error in
+      guard status != .error else {
+        print("Cannot retrieve Firebase remote config, check your SDK integration first: \(String(describing:error))")
+        return
       }
+
+      AppGuard.default.updateFrom(remoteConfig: remoteConfig)
+
+      let message = """
+      title : \(AppGuard.default.configuration.title ?? "") \n
+      deeplink : \(AppGuard.default.configuration.deeplink ?? "") \n
+      dialogType : \(AppGuard.default.configuration.dialogType) \n
+      content : \(AppGuard.default.configuration.content ?? "") \n
+      actionButtonLabel : \(AppGuard.default.configuration.actionButtonLabel ?? "") \n
+      changelogContent : \(AppGuard.default.configuration.changelogContent ?? "") \n
+      title : \(AppGuard.default.configuration.title ?? "") \n
+      imageUrl : \(AppGuard.default.configuration.imageUrl ?? "") \n
+      versionCode : \(AppGuard.default.configuration.versionCode) \n
+      """
+
+      let alertController = UIAlertController(title: "Configuration updated from Firebase 👌",
+                                              message: message,
+                                              preferredStyle: .alert)
+      let dismissItem = UIAlertAction(title: "Ok", style: .default, handler: nil)
+      alertController.addAction(dismissItem)
+      self.present(alertController, animated: true, completion: nil)
     }
-  }
-  
+  }  
 }
 
 // MARK: - AppGuardDataSource

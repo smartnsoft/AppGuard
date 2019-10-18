@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E9C9DC8F1B85C3BA3A8265D /* Pods_AppGuardAbstract_AppGuard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FCB2D23CA9C972A8BA9C08 /* Pods_AppGuardAbstract_AppGuard_Example.framework */; };
-		42ED991E43E13F9D1EC29E09 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25D99A0E524519753037807 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */; };
 		4420C59F206160C000CB8C0F /* AppGuard_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420C59E206160C000CB8C0F /* AppGuard_ExampleUITests.swift */; };
 		4420C5AD2061611100CB8C0F /* AppGuard_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420C5AC2061611100CB8C0F /* AppGuard_ExampleTests.swift */; };
 		4420C5C0206161CA00CB8C0F /* configuration_recommandedTo3.json in Resources */ = {isa = PBXBuildFile; fileRef = 4420C5B5206161CA00CB8C0F /* configuration_recommandedTo3.json */; };
@@ -32,7 +30,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		A8B717A06E1C5DD4787F67A3 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E0583E91D897BAC456F0E0 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */; };
+		D49B5613C3FFDDBE711708FA /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A4DEABF9089EC1425DF612 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */; };
+		D5750BDC3391D132EE5BE2CB /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358C997875B1E27CAB154C79 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */; };
+		FD6C800E4327C2898109800E /* Pods_AppGuardAbstract_AppGuard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59572D0CEB2544795EFE78 /* Pods_AppGuardAbstract_AppGuard_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BA553AB555096D6C973A7DE /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1AF2BCA89455ED6DDF7A48FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		37E0583E91D897BAC456F0E0 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		438568D163EEF38512B90F22 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		31A4DEABF9089EC1425DF612 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		358C997875B1E27CAB154C79 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3786CF50E0F189533621F982 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4420C59C206160C000CB8C0F /* AppGuard_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppGuard_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4420C59E206160C000CB8C0F /* AppGuard_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuard_ExampleUITests.swift; sourceTree = "<group>"; };
 		4420C5A0206160C000CB8C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +79,7 @@
 		449C24542049C71B001176DD /* configuration3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration3.json; sourceTree = "<group>"; };
 		449C24552049C71B001176DD /* configuration2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration2.json; sourceTree = "<group>"; };
 		44C86472204FFF7200DE0CE0 /* techno_penguin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = techno_penguin.json; sourceTree = "<group>"; };
+		47870632565ECF35992B20B1 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AppGuard_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGuard_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,12 +89,11 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6A7EBCBA28008B7E4E7E1D07 /* AppGuard.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AppGuard.podspec; path = ../AppGuard.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6CCCEF7AECEA2A1A2A860CEA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		73D57D9A919537FFE846FDC9 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		82BAC3093ECEBBCE5FA1CBEA /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9463979582EB17DBB5FC3F3E /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A25D99A0E524519753037807 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1FCB2D23CA9C972A8BA9C08 /* Pods_AppGuardAbstract_AppGuard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2B314661C578D3954DE78AC /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8AAD39507206952288C145A7 /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8FC03B923EC4FFDC7677FEC9 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C59572D0CEB2544795EFE78 /* Pods_AppGuardAbstract_AppGuard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGuardAbstract_AppGuard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6E569BA6AC9166854B99591 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		FFB79745B1713B6B5C977B9D /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; path = "Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8B717A06E1C5DD4787F67A3 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework in Frameworks */,
+				D49B5613C3FFDDBE711708FA /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42ED991E43E13F9D1EC29E09 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework in Frameworks */,
+				D5750BDC3391D132EE5BE2CB /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,13 +117,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E9C9DC8F1B85C3BA3A8265D /* Pods_AppGuardAbstract_AppGuard_Example.framework in Frameworks */,
+				FD6C800E4327C2898109800E /* Pods_AppGuardAbstract_AppGuard_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BA53A7FC9F24823099D6C97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AAD39507206952288C145A7 /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */,
+				FFB79745B1713B6B5C977B9D /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */,
+				8FC03B923EC4FFDC7677FEC9 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */,
+				B6E569BA6AC9166854B99591 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */,
+				3786CF50E0F189533621F982 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */,
+				47870632565ECF35992B20B1 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4420C59D206160C000CB8C0F /* AppGuard_ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +183,8 @@
 				4420C5AB2061611100CB8C0F /* AppGuard_ExampleTests */,
 				4420C59D206160C000CB8C0F /* AppGuard_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				A27B0BF41614D21569BBA470 /* Pods */,
-				EA696D63A95F48092EA66B96 /* Frameworks */,
+				2BA53A7FC9F24823099D6C97 /* Pods */,
+				72816BEEB7030D23258DF636 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,25 +234,12 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		A27B0BF41614D21569BBA470 /* Pods */ = {
+		72816BEEB7030D23258DF636 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82BAC3093ECEBBCE5FA1CBEA /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */,
-				0BA553AB555096D6C973A7DE /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */,
-				9463979582EB17DBB5FC3F3E /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */,
-				438568D163EEF38512B90F22 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */,
-				73D57D9A919537FFE846FDC9 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */,
-				E2B314661C578D3954DE78AC /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EA696D63A95F48092EA66B96 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C1FCB2D23CA9C972A8BA9C08 /* Pods_AppGuardAbstract_AppGuard_Example.framework */,
-				A25D99A0E524519753037807 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */,
-				37E0583E91D897BAC456F0E0 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */,
+				9C59572D0CEB2544795EFE78 /* Pods_AppGuardAbstract_AppGuard_Example.framework */,
+				358C997875B1E27CAB154C79 /* Pods_AppGuardAbstract_AppGuard_ExampleTests.framework */,
+				31A4DEABF9089EC1425DF612 /* Pods_AppGuardAbstract_AppGuard_ExampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,11 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4420C5A5206160C000CB8C0F /* Build configuration list for PBXNativeTarget "AppGuard_ExampleUITests" */;
 			buildPhases = (
-				5B231612743F70136F6802A3 /* [CP] Check Pods Manifest.lock */,
+				06791253BC0F151DC65D1D0E /* [CP] Check Pods Manifest.lock */,
 				4420C598206160C000CB8C0F /* Sources */,
 				4420C599206160C000CB8C0F /* Frameworks */,
 				4420C59A206160C000CB8C0F /* Resources */,
-				25E3B6DC67A4F29A566AEF8F /* [CP] Embed Pods Frameworks */,
+				04D45EA30A0B587AB6445A51 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,11 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4420C5B12061611100CB8C0F /* Build configuration list for PBXNativeTarget "AppGuard_ExampleTests" */;
 			buildPhases = (
-				BE3F734C26DA5C13780AD6F7 /* [CP] Check Pods Manifest.lock */,
+				D1AE1D44295650F791BF5C67 /* [CP] Check Pods Manifest.lock */,
 				4420C5A62061611100CB8C0F /* Sources */,
 				4420C5A72061611100CB8C0F /* Frameworks */,
 				4420C5A82061611100CB8C0F /* Resources */,
-				5B3F7F9D956D5CD1CE8A3FA8 /* [CP] Embed Pods Frameworks */,
+				7AE971228985CE9BFDB1175C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,11 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "AppGuard_Example" */;
 			buildPhases = (
-				E637FB6C0E26CB802CE06864 /* [CP] Check Pods Manifest.lock */,
+				B21D7128BD04D6711296FAB7 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				961BF86CF422343FB1E19A6A /* [CP] Embed Pods Frameworks */,
+				91A87F462E8036231565FB9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,6 +337,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -393,48 +394,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25E3B6DC67A4F29A566AEF8F /* [CP] Embed Pods Frameworks */ = {
+		04D45EA30A0B587AB6445A51 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppGuard/AppGuard.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Jelly/Jelly.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppGuard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jelly.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B231612743F70136F6802A3 /* [CP] Check Pods Manifest.lock */ = {
+		06791253BC0F151DC65D1D0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AppGuardAbstract-AppGuard_ExampleUITests-checkManifestLockResult.txt",
 			);
@@ -443,102 +446,106 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B3F7F9D956D5CD1CE8A3FA8 /* [CP] Embed Pods Frameworks */ = {
+		7AE971228985CE9BFDB1175C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppGuard/AppGuard.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Jelly/Jelly.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppGuard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jelly.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		961BF86CF422343FB1E19A6A /* [CP] Embed Pods Frameworks */ = {
+		91A87F462E8036231565FB9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppGuard/AppGuard.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Jelly/Jelly.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppGuard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jelly.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE3F734C26DA5C13780AD6F7 /* [CP] Check Pods Manifest.lock */ = {
+		B21D7128BD04D6711296FAB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AppGuardAbstract-AppGuard_ExampleTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AppGuardAbstract-AppGuard_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E637FB6C0E26CB802CE06864 /* [CP] Check Pods Manifest.lock */ = {
+		D1AE1D44295650F791BF5C67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AppGuardAbstract-AppGuard_Example-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AppGuardAbstract-AppGuard_ExampleTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -613,7 +620,7 @@
 /* Begin XCBuildConfiguration section */
 		4420C5A3206160C000CB8C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73D57D9A919537FFE846FDC9 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */;
+			baseConfigurationReference = 3786CF50E0F189533621F982 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -640,7 +647,7 @@
 		};
 		4420C5A4206160C000CB8C0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2B314661C578D3954DE78AC /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */;
+			baseConfigurationReference = 47870632565ECF35992B20B1 /* Pods-AppGuardAbstract-AppGuard_ExampleUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -665,7 +672,7 @@
 		};
 		4420C5B22061611100CB8C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9463979582EB17DBB5FC3F3E /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */;
+			baseConfigurationReference = 8FC03B923EC4FFDC7677FEC9 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -690,7 +697,7 @@
 		};
 		4420C5B32061611100CB8C0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 438568D163EEF38512B90F22 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */;
+			baseConfigurationReference = B6E569BA6AC9166854B99591 /* Pods-AppGuardAbstract-AppGuard_ExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -818,25 +825,10 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82BAC3093ECEBBCE5FA1CBEA /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */;
+			baseConfigurationReference = 8AAD39507206952288C145A7 /* Pods-AppGuardAbstract-AppGuard_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppGuard\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Extra\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Jelly\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
-					"\"${PODS_ROOT}/FirebaseABTesting/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseRemoteConfig/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AppGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -848,25 +840,10 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BA553AB555096D6C973A7DE /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */;
+			baseConfigurationReference = FFB79745B1713B6B5C977B9D /* Pods-AppGuardAbstract-AppGuard_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppGuard\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Extra\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Jelly\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
-					"\"${PODS_ROOT}/FirebaseABTesting/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseRemoteConfig/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AppGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

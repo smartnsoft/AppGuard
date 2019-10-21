@@ -30,7 +30,7 @@ public extension AppGuard {
   /// **Note**: It will use the configured (or default) keys binding for parsing.
   ///
   /// - Parameter config: Your desired Firebase Remote Config
-  public func updateFrom(remoteConfig config: RemoteConfig) {
+  func updateFrom(remoteConfig config: RemoteConfig) {
     AppGuardConfigurationKeys.allStringKeys.forEach { (stringKey) in
       if let parseKey = UserDefaults.standard.string(forKey: stringKey.userDefaultsCustomKey) {
         UserDefaults.standard.set(config.configValue(forKey: parseKey).stringValue,

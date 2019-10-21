@@ -36,6 +36,15 @@ public protocol AppGuardUIDelegate: class {
   func didChooseAction(`for` context: AppGuardContextType)
 }
 
+public extension AppGuardUIDelegate {
+  func guardControllerWillAppear(`for` context: AppGuardContextType) {}
+  func guardControllerDidAppear(`for` context: AppGuardContextType) {}
+  func guardControllerWillDisappear(`for` context: AppGuardContextType) {}
+  func guardControllerDidDisappear(`for` context: AppGuardContextType) {}
+  func didChooseLater(`for` context: AppGuardContextType) {}
+  func didChooseAction(`for` context: AppGuardContextType) {}
+}
+
 /// Configure your custom controllers to display instead of default ones
 public protocol AppGuardDataSource: class {
   func guardPresenterController() -> UIViewController?

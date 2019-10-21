@@ -25,11 +25,12 @@ import Foundation
 // MARK: - Bundle
 extension Bundle {
   static func bundleForResource(name: String, ofType type: String) -> Bundle {
-    
-    if(Bundle.main.path(forResource: name, ofType: type) != nil) {
-      return Bundle.main
+
+    if let bundleUrl = Bundle.main.url(forResource: "AppGuard", withExtension: "bundle"),
+      let bundle = Bundle(url: bundleUrl) {
+      return bundle
     }
     
-    return Bundle(for: AppGuard.self)
+    return Bundle.main
   }
 }

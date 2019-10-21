@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.default_subspec = 'Core'
   s.static_framework = true
+  s.resource_bundles = {'AppGuard' => ['AppGuard/Classes/UI/*.{xib}']}
 
   s.subspec 'Core' do |core|
     core.dependency 'Jelly', '~> 1.2.0'

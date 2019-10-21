@@ -1,6 +1,4 @@
 PODS:
-  - AppGuard (0.3.0):
-    - AppGuard/Core (= 0.3.0)
   - AppGuard/Core (0.3.0):
     - Jelly (~> 1.2.0)
   - AppGuard/FirebaseRemoteConfig (0.3.0):
@@ -65,7 +63,6 @@ PODS:
   - SwiftLint (0.25.0)
 
 DEPENDENCIES:
-  - AppGuard (from `../`)
   - AppGuard/FirebaseRemoteConfig (from `../`)
   - Extra/CoreAnimation (~> 1.2.0)
   - Extra/UIKit (~> 1.2.0)
@@ -77,6 +74,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Extra
+    - Kingfisher
+    - lottie-ios
+    - SwiftDate
+    - SwiftLint
+  trunk:
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalyticsInterop
@@ -89,19 +91,15 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - Jelly
-    - Kingfisher
-    - lottie-ios
     - nanopb
     - Protobuf
-    - SwiftDate
-    - SwiftLint
 
 EXTERNAL SOURCES:
   AppGuard:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppGuard: 17d258675e172c6f149242c27944f22873c2d564
+  AppGuard: 8e7a38d29bd9b9991595ae4a3ae43d0ae12d946e
   Extra: 29591a8ffff56c0152b05b857b6d5e395d5bd520
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
@@ -122,6 +120,6 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 5b1181f9d31ece8fa4b0c5bbe05b586207de0486
+PODFILE CHECKSUM: 3c268f22d6887d02020e71ba7ab30ed0f886e227
 
 COCOAPODS: 1.8.4

@@ -256,7 +256,7 @@
 				4420C599206160C000CB8C0F /* Frameworks */,
 				4420C59A206160C000CB8C0F /* Resources */,
 				04D45EA30A0B587AB6445A51 /* [CP] Embed Pods Frameworks */,
-				41C78E763142BBEBFFBE7A20 /* [CP] Copy Pods Resources */,
+				2B354A0038ED154D4701EECF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,7 +277,7 @@
 				4420C5A72061611100CB8C0F /* Frameworks */,
 				4420C5A82061611100CB8C0F /* Resources */,
 				7AE971228985CE9BFDB1175C /* [CP] Embed Pods Frameworks */,
-				6A9C46D1BD8A9602125B4587 /* [CP] Copy Pods Resources */,
+				B00AF67B73A4267C694E65BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,7 +298,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				91A87F462E8036231565FB9D /* [CP] Embed Pods Frameworks */,
-				48277B2936F6E42379AF1AAD /* [CP] Copy Pods Resources */,
+				591959D7B9F5CDDC5736DCC0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,7 +449,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41C78E763142BBEBFFBE7A20 /* [CP] Copy Pods Resources */ = {
+		2B354A0038ED154D4701EECF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,7 +467,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleUITests/Pods-AppGuardAbstract-AppGuard_ExampleUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		48277B2936F6E42379AF1AAD /* [CP] Copy Pods Resources */ = {
+		591959D7B9F5CDDC5736DCC0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,24 +483,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A9C46D1BD8A9602125B4587 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AppGuard/AppGuard.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppGuard.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7AE971228985CE9BFDB1175C /* [CP] Embed Pods Frameworks */ = {
@@ -563,6 +545,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_Example/Pods-AppGuardAbstract-AppGuard_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B00AF67B73A4267C694E65BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppGuard/AppGuard.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppGuard.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppGuardAbstract-AppGuard_ExampleTests/Pods-AppGuardAbstract-AppGuard_ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B21D7128BD04D6711296FAB7 /* [CP] Check Pods Manifest.lock */ = {

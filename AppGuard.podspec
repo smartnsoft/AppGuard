@@ -12,14 +12,14 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.default_subspec = 'Core'
   s.static_framework = true
-  s.resource_bundles = {'AppGuard' => ['AppGuard/Classes/UI/*.{xib}']}
 
   s.subspec 'Core' do |core|
     core.dependency 'Jelly', '~> 1.2.0'
     core.source_files = [
-    'AppGuard/Classes/Logic/*',
-    'AppGuard/Classes/UI/*'
+    'AppGuard/Classes/Logic/*.{swift}',
+    'AppGuard/Classes/UI/*.{swift}'
     ]
+    core.resource_bundles = {'AppGuard' => ['AppGuard/Classes/UI/*.{xib}']}
   end
   
   s.subspec 'FirebaseRemoteConfig' do |firebase|

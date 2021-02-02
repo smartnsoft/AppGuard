@@ -6,7 +6,6 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Smart&Soft' => 'contact@smartnsoft.com' }
   s.source           = { :git => 'https://github.com/smartnsoft/AppGuard.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/smartnsoft'
   s.swift_version    = '4.2'
   s.ios.deployment_target = '11.0'
   s.frameworks = 'UIKit'

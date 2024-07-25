@@ -27,11 +27,11 @@ final public class AppGuardGraphicContext {
   
   // The global corner radius to apply on the main displayed view
   public lazy var cornerRadius: CGFloat = 10
-
+  
   /// Whether the main button show have rounded edges.
   /// You can customize the corner radius with the ````buttonCornerRadius```` property
   public var roundedButton = true
-
+  
   /// The corner radius to apply to the main button.
   /// Ignored if ````roundedButton```` is ````false````.
   /// If nil, the corner radius will be set so that the button is round.
@@ -54,19 +54,27 @@ final public class AppGuardGraphicContext {
   public var image: UIImage?
   
   // Jelly
-  public lazy var defaultJellyPresentation: JellyPresentation = {
-    var presentation = JellySlideInPresentation(cornerRadius: Double(self.cornerRadius),
-                                                backgroundStyle: .blur(effectStyle: .extraLight),
-                                                duration: .medium,
-                                                directionShow: .top,
-                                                directionDismiss: .bottom,
-                                                widthForViewController: .custom(value: 250),
-                                                heightForViewController: .custom(value: 400))
-    presentation.isTapBackgroundToDismissEnabled = false
+  public lazy var defaultJellyPresentation: Presentation = {
+    
+    let uiConfiguration = PresentationUIConfiguration(cornerRadius: Double(self.cornerRadius),
+                                                      backgroundStyle: .blurred(effectStyle: .extraLight),
+                                                      isTapBackgroundToDismissEnabled: false
+    )
+    
+    let timing = PresentationTiming(duration: .medium)
+    let size = PresentationSize(width: .custom(value: 250), height: .custom(value: 400))
+    
+    var presentation = JellySlideInPresentation(directionShow: .top, directionDismiss: .bottom,
+                                                uiConfiguration: uiConfiguration,
+                                                size: size,
+                                                timing: timing
+    )
+    
+    
     return presentation
   }()
   
-  public lazy var jellyCustomTransition: JellyPresentation = {
+  public lazy var jellyCustomTransition: Presentation = {
     self.defaultJellyPresentation
   }()
 }

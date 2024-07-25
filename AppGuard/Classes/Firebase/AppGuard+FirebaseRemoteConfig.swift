@@ -40,7 +40,7 @@ public extension AppGuard {
     
     AppGuardConfigurationKeys.allIntKeys.forEach { (integerKey) in
       if let parseKey = UserDefaults.standard.string(forKey: integerKey.userDefaultsCustomKey) {
-        UserDefaults.standard.set(config.configValue(forKey: parseKey).numberValue?.intValue,
+         UserDefaults.standard.set(config.configValue(forKey: parseKey).numberValue.intValue,
                                   forKey: integerKey.userDefaultsKey)
       }
     }

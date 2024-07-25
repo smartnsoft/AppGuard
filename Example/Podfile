@@ -2,7 +2,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 abstract_target 'AppGuardAbstract' do
-  platform :ios, '9.0'
+  platform :ios, '13.0'
   
   pod 'AppGuard/FirebaseRemoteConfig', :path => '../'
   pod 'lottie-ios'

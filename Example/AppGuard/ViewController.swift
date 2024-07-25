@@ -163,10 +163,10 @@ extension ViewController: AppGuardDataSource {
     if let sImageUrl = AppGuard.default.configuration.imageUrl, let imageURL = URL(string: sImageUrl) {
       imageView?.kf.setImage(with: imageURL)
     } else if let imageView = imageView {
-      let lottieView = LOTAnimationView(name: "techno_penguin")
+      let lottieView = LottieAnimationView(name: "techno_penguin")
       lottieView.frame = imageView.frame
       lottieView.contentMode = .scaleAspectFit
-      lottieView.loopAnimation = true
+      lottieView.loopMode = .loop
       imageView.ex.addSubview(lottieView)
       lottieView.play()
     }

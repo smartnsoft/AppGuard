@@ -102,7 +102,7 @@ public final class AppGuard {
         //Prepare animation
         let alertPresentation = self.graphicContext.jellyCustomTransition
         self.jellyAnimator = JellyAnimator(presentation: alertPresentation)
-        self.jellyAnimator?.prepare(viewController: controller)
+        self.jellyAnimator?.prepare(presentedViewController: controller)
         
         //Display
         self.uiDelegate?.guardControllerWillAppear(for: result.context)
